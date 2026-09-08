@@ -18,6 +18,8 @@ YAML in `_data` is still the source of truth (`team_members.yml`, `students.yml`
 
 Pages live in `_pages`. Core navigation is `_data/nav.yml` (Home, Access, Research, People, Papers, News, Data). Extra pages and off-site dashboards are `_data/extras.yml` — they show in the main menu when `nav` is true, and always on `/apps/`. To frame a remote dashboard under a TBRG path, add a page with `layout: embed`.
 
+Long-form writing is **Notes** (`_posts/`, `/notes/`), linked from Research, not in the primary nav. `/blog/` redirects there. News stays one-line headlines.
+
 The Access map is built offline by `scripts/access/build.py` (not Jekyll). Outputs land in `access-data/`.
 
 Dark charcoal editorial layout: `css/tbrg.css`.

@@ -1,24 +1,11 @@
 ---
-title: "Blog | Travel Behavior Research Group"
+title: "Notes | Travel Behavior Research Group"
 layout: textlay
-excerpt: "Notes and longer updates from the Travel Behavior Research Group."
+excerpt: "Method notes and short findings from the Travel Behavior Research Group."
 permalink: /blog/
+redirect_to: /notes/
+sitemap: false
 ---
-<p class="page-kicker">Blog</p>
-<h1>Notes from the group</h1>
-<p>Longer updates, fieldwork notes, and writing that does not fit a one-line news item. Short announcements stay on <a href="{{ '/news/' | relative_url }}">News</a>. This page is linked from news items when a note exists; it is not in the main menu.</p>
-{% if site.posts.size == 0 %}
-<p class="empty-note">No posts yet. Add one from the site editor (Blog posts).</p>
-{% else %}
-<ol class="post-index">
-{% for post in site.posts %}
-<li class="post-teaser">
-<time class="news-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%d %b %Y' }}</time>
-<div>
-<h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-{% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncate: 220 }}</p>{% endif %}
-</div>
-</li>
-{% endfor %}
-</ol>
-{% endif %}
+<p class="page-kicker">Moved</p>
+<h1>Notes</h1>
+<p>Longer writing now lives at <a href="{{ '/notes/' | relative_url }}">Notes</a>.</p>

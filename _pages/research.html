@@ -28,6 +28,24 @@ permalink: /research/
 </figure>
 <p>A related lab project, the Public Transport Accessibility Index (PTAI), measures demand-weighted generalized travel cost across 88 inner-Bangkok subdistricts. The Access map is the walk to rail, not that index.</p>
 
+{% if site.posts.size > 0 %}
+<div class="section-head">
+<h2>Notes</h2>
+<a href="{{ '/notes/' | relative_url }}">All notes</a>
+</div>
+<ol class="post-index">
+{% for post in site.posts limit:3 %}
+<li class="post-teaser">
+<time class="news-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%d %b %Y' }}</time>
+<div>
+<h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+{% if post.excerpt %}<p>{{ post.excerpt | strip_html | truncate: 180 }}</p>{% endif %}
+</div>
+</li>
+{% endfor %}
+</ol>
+{% endif %}
+
 <h2>Faculty research</h2>
 <p>From the department staff page for Asst. Prof. Pongsun Bunditsakulchai:</p>
 <ul class="theme-list">

@@ -10,8 +10,8 @@ Someone with access to the GitHub repository (`pongsun-b/TravBhv`) must invite y
 
 1. Open [the editor](https://pongsun-b.github.io/TravBhv/admin/).
 2. Click **Login with GitHub** and approve access.
-3. Choose a section (Faculty, Students, Publications, News, Extra pages, or Blog posts).
-4. Change the fields (or click **Add** for a new person, paper, news item, extra page, or post).
+3. Choose a section (Faculty, Students, Publications, News, Extra pages, or Notes).
+4. Change the fields (or click **Add** for a new person, paper, news item, extra page, or note).
 5. Click **Save** / **Publish**.
 6. Wait one or two minutes, then refresh the public site: https://pongsun-b.github.io/TravBhv
 
@@ -22,9 +22,11 @@ Someone with access to the GitHub repository (`pongsun-b/TravBhv`) must invite y
 | Faculty | Names, roles, emails, photos, short bios |
 | Students | Student names and emails |
 | Publications | Paper title, authors, short description, DOI/link |
-| News | Date + one headline |
+| News | Date + one headline. Use the same calendar date as a Note if the headline should link to it. |
 | Extra pages | Other pages next to the main menu: a path on this site (`/foo/`) or a dashboard URL (`https://…`) |
-| Blog posts | Longer notes. Short announcements stay in News. |
+| Notes | A few paragraphs of method or findings. Research themes are not edited here. |
+
+News is one headline. Notes are a few paragraphs of method or findings. Research themes are not edited in the form editor.
 
 Photos: upload a square-ish portrait. It will show on the People page.
 
@@ -55,7 +57,7 @@ You must be logged into GitHub. Click a link, then the pencil icon, then **Commi
 - [Faculty](https://github.com/pongsun-b/TravBhv/edit/main/_data/team_members.yml)
 - [Students](https://github.com/pongsun-b/TravBhv/edit/main/_data/students.yml)
 - [Extra pages](https://github.com/pongsun-b/TravBhv/edit/main/_data/extras.yml)
-- [Blog posts](https://github.com/pongsun-b/TravBhv/tree/main/_posts)
+- [Notes](https://github.com/pongsun-b/TravBhv/tree/main/_posts)
 
 Copy an existing block and change the text. Keep the dashes and spacing the same.
 
