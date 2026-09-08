@@ -19,6 +19,7 @@ description: >
 url: "https://pongsun-b.github.io"
 baseurl: "/TravBhv"
 lang: en
+timezone: Asia/Bangkok
 
 affiliation: Department of Civil Engineering, Chulalongkorn University
 address: Department of Civil Engineering, 254 Phayathai Rd, Pathumwan, Bangkok 10330, Thailand

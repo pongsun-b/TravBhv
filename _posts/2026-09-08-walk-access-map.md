@@ -1,6 +1,6 @@
 ---
 title: Walk access to urban rail
-date: 2026-09-09
+date: 2026-09-08
 ---
 The group’s first-mile map is on the site: minutes on the street network from an urban-rail exit in Bangkok.
 
