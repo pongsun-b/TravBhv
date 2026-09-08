@@ -13,4 +13,4 @@ The default layer is operating urban rail: BTS Sukhumvit, Silom, and Gold; MRT B
 
 The study area is all 50 Bangkok districts, plus districts in Nonthaburi, Samut Prakan, and Pathum Thani that contain a selected station. GeoJSON and a 16:9 poster are on [Data]({{ '/data/' | relative_url }}). Cite TBRG and OpenStreetMap contributors.
 
-This map is the walk to rail. It is not the Public Transport Accessibility Index (PTAI), which is a demand-weighted generalized-cost index for 88 inner-Bangkok subdistricts. [Access vs PTAI]({{ '/2026/09/09/access-and-ptai.html' | relative_url }}) is the short comparison. [Open the map]({{ '/access/' | relative_url }}).
+This map is the walk to rail. It is not the Public Transport Accessibility Index (PTAI), which is a demand-weighted generalized-cost index for 88 inner-Bangkok subdistricts. [Access vs PTAI]({{ site.baseurl }}{% post_url 2026-09-08-access-and-ptai %}) is the short comparison. [Open the map]({{ '/access/' | relative_url }}).
