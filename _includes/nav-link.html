@@ -1,0 +1,15 @@
+{% assign n = include.item %}
+{% assign n_href = n.url | default: "" %}
+{% assign n_label = n.title %}
+{% if include.label %}
+{% assign n_label = include.label %}
+{% endif %}
+{% assign n_offsite = false %}
+{% if n_href contains "://" %}
+{% assign n_offsite = true %}
+{% endif %}
+{% if n_offsite %}
+<a href="{{ n_href }}" class="nav-offsite" target="_blank" rel="noopener noreferrer" aria-label="{{ n_label }} (opens in a new tab)">{{ n_label }}</a>
+{% else %}
+<a href="{{ n_href | relative_url }}"{% if page.url == n_href %} aria-current="page"{% endif %}>{{ n_label }}</a>
+{% endif %}

@@ -73,6 +73,20 @@ collections:
             fields:
               - { label: Date, name: date, widget: string, hint: "e.g. 31 Aug 2026" }
               - { label: Headline, name: headline, widget: text }
+      - name: extras
+        label: Extra pages
+        file: _data/extras.yml
+        fields:
+          - name: items
+            label: Extra pages and dashboards
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string, hint: "Menu label, e.g. PTAI" }
+              - { label: URL, name: url, widget: string, hint: "On this site: /foo/ — elsewhere: https://…" }
+              - { label: Show in top menu, name: nav, widget: boolean, default: true }
+              - { label: Show in footer, name: footer, widget: boolean, default: false }
+              - { label: Short description, name: description, widget: text, required: false, hint: "Shown on the Apps page" }
   - name: blog
     label: Blog posts
     folder: _posts

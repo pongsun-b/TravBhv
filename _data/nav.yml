@@ -1,0 +1,21 @@
+# Primary menu. Extra dashboards and off-site pages go in extras.yml,
+# not here — this list is the stable core.
+items:
+  - title: Home
+    url: /
+  - title: Access
+    url: /access/
+    footer: true
+    footer_title: Access map
+  - title: Research
+    url: /research/
+    footer: true
+  - title: People
+    url: /team/
+  - title: Papers
+    url: /publications/
+  - title: News
+    url: /news/
+  - title: Data
+    url: /data/
+    footer: true

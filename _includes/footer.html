@@ -9,10 +9,24 @@
           Faculty of Engineering,<br>
           <a href="{{ site.university_url }}" target="_blank" rel="noopener">Chulalongkorn University</a>
         </p>
-        <p>
-          <a href="{{ '/access/' | relative_url }}">Access map</a> ·
-          <a href="{{ '/research/' | relative_url }}">Research</a> ·
-          <a href="{{ '/data/' | relative_url }}">Data</a>
+        <p class="footer-links">
+          {% for item in site.data.nav.items %}
+          {% if item.footer and item.title and item.url %}
+          {% include nav-link.html item=item label=item.footer_title %}
+          {% endif %}
+          {% endfor %}
+          {% assign extra_n = 0 %}
+          {% for item in site.data.extras.items %}
+          {% if item.title and item.url %}
+          {% assign extra_n = extra_n | plus: 1 %}
+          {% if item.footer %}
+          {% include nav-link.html item=item label=item.footer_title %}
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+          {% if extra_n > 0 %}
+          <a href="{{ '/apps/' | relative_url }}"{% if page.url == '/apps/' %} aria-current="page"{% endif %}>Apps</a>
+          {% endif %}
         </p>
       </div>
       <div>

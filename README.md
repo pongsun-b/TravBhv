@@ -14,9 +14,9 @@ Short version: open <https://pongsun-b.github.io/TravBhv/admin/>, log in with Gi
 
 ## For developers
 
-YAML in `_data` is still the source of truth (`team_members.yml`, `students.yml`, `publist.yml`, `news.yml`). Each of those files has an `items:` list so the `/admin` forms can edit them.
+YAML in `_data` is still the source of truth (`team_members.yml`, `students.yml`, `publist.yml`, `news.yml`, `extras.yml`). Each of those files has an `items:` list so the `/admin` forms can edit them.
 
-Pages live in `_pages`. Navigation is Home, Access, Research, People, Publications, News, Data.
+Pages live in `_pages`. Core navigation is `_data/nav.yml` (Home, Access, Research, People, Papers, News, Data). Extra pages and off-site dashboards are `_data/extras.yml` — they show in the main menu when `nav` is true, and always on `/apps/`. To frame a remote dashboard under a TBRG path, add a page with `layout: embed`.
 
 The Access map is built offline by `scripts/access/build.py` (not Jekyll). Outputs land in `access-data/`.
 

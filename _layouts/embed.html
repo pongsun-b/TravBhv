@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="embed-page">
+  <section class="embed-intro wrap">
+    <p class="page-kicker">{{ page.kicker | default: "App" }}</p>
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+    {% if page.embed %}
+    <p><a class="btn" href="{{ page.embed }}" target="_blank" rel="noopener noreferrer">Open in its own window</a></p>
+    {% endif %}
+  </section>
+  {% if page.embed %}
+  <div class="embed-stage">
+    <iframe src="{{ page.embed }}" title="{{ page.title | escape }}" allow="fullscreen" loading="eager" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  {% else %}
+  <p class="wrap empty-note">No dashboard URL is set on this page yet. Add an <code>embed:</code> address in the page front matter, or link the off-site app from Extra pages.</p>
+  {% endif %}
+</div>

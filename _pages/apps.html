@@ -1,0 +1,36 @@
+---
+title: "Apps | Travel Behavior Research Group"
+layout: textlay
+excerpt: "Dashboards and extra pages alongside the main TBRG site."
+permalink: /apps/
+---
+<p class="page-kicker">Apps</p>
+<h1>Dashboards and extra pages</h1>
+<p>Tools that sit next to the main site — including dashboards hosted elsewhere. The Access map lives under <a href="{{ '/access/' | relative_url }}">Access</a>.</p>
+{% assign extra_n = 0 %}
+{% for item in site.data.extras.items %}
+{% if item.title and item.url %}
+{% assign extra_n = extra_n | plus: 1 %}
+{% endif %}
+{% endfor %}
+{% if extra_n == 0 %}
+<p class="empty-note">Nothing extra is listed yet. Add a dashboard URL or an on-site path from the site editor (Extra pages).</p>
+{% else %}
+<ul class="theme-list">
+{% for item in site.data.extras.items %}
+{% if item.title and item.url %}
+<li>
+<strong>{{ item.title }}</strong>
+{% if item.description %}{{ item.description }}{% endif %}
+{% assign offsite = false %}
+{% if item.url contains "://" %}{% assign offsite = true %}{% endif %}
+{% if offsite %}
+<p class="person-meta"><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">Open {{ item.title }}</a> — hosted off this site.</p>
+{% else %}
+<p class="person-meta"><a href="{{ item.url | relative_url }}">Open {{ item.title }}</a></p>
+{% endif %}
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+{% endif %}

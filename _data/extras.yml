@@ -1,0 +1,14 @@
+# Extra pages and dashboards, shown after the main menu when nav is true.
+# Prefer the /admin editor (Extra pages).
+#
+# url: a path on this site (/foo/) or a full URL (https://dashboard.example).
+# Off-site URLs open in a new tab. To frame a dashboard under a TBRG path,
+# add a file in _pages with layout: embed and point url here at that path.
+#
+# Example:
+# items:
+#   - title: PTAI
+#     url: https://example.streamlit.app
+#     nav: true
+#     description: Demand-weighted public transport access.
+items: []
