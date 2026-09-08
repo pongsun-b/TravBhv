@@ -1,0 +1,15 @@
+<section class="slides" aria-label="Featured">
+{% assign slides = site.data.slides.items | default: site.data.slides %}
+{% for slide in slides %}
+<article class="slide{% if slide.image == '' or slide.image == nil %} slide-type{% endif %}">
+{% if slide.image and slide.image != '' %}
+<img class="slide-image" src="{{ slide.image | relative_url }}" alt="">
+{% endif %}
+<div class="slide-copy">
+<p class="slide-kicker">{{ slide.kicker }}</p>
+<h2 class="slide-title">{{ slide.title }}</h2>
+<p class="slide-caption">{{ slide.caption }}</p>
+</div>
+</article>
+{% endfor %}
+</section>

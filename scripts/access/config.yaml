@@ -1,0 +1,68 @@
+# Walk-isochrone pipeline for TBRG /access/
+# Distances follow network length at walk_speed_kmh.
+
+# 4.0 km/h ≈ 1.11 m/s — typical urban walk in heat (not realtor 5 km/h).
+walk_speed_kmh: 4.0
+walk_speeds_kmh: [3.6, 4.0, 4.5]
+cutoffs_min: [5, 10, 15]
+edge_buffer_m: 40
+simplify_m: 25
+graph_buffer_m: 1600
+crs_metric: EPSG:32647
+
+# west, south, east, north — BMA + northern BTS / Red Line / ARL
+bbox: [100.30, 13.50, 100.95, 14.12]
+
+bma_province: Bangkok
+adjacent_provinces:
+  - Nonthaburi
+  - Samut Prakan
+  - Pathum Thani
+
+# Operating urban rail. Names matched against OSM route/station tags.
+lines:
+  allow:
+    - BTS
+    - Sukhumvit
+    - Silom
+    - Gold Line
+    - Gold line
+    - MRT
+    - Blue Line
+    - Purple Line
+    - Yellow Line
+    - Pink Line
+    - Airport Rail
+    - ARL
+    - City Line
+    - Dark Red
+    - Light Red
+    - SRT Red
+    - Red Line
+    - บีทีเอส
+    - เอ็มอาร์ที
+    - สายสีเหลือง
+    - สายสีชมพู
+    - สายสีแดง
+    - สายสีทอง
+    - สายสีน้ำเงิน
+    - สายสีม่วง
+    - สายสุขุมวิท
+    - สายสีลม
+  deny:
+    - Orange
+    - สีส้ม
+    - ferry
+    - boat
+    - Chao Phraya
+    - Northern Line
+    - Southern Line
+    - Eastern Line
+    - Western Line
+    - Mae Klong
+    - Ordinary
+    - Rapid
+    - Express
+
+output_dir: access-data
+cache_dir: scripts/access/cache

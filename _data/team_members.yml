@@ -1,0 +1,24 @@
+# Faculty. Prefer the /admin editor.
+# Source: Department of Civil Engineering staff page.
+items:
+  - name: Pongsun Bunditsakulchai
+    thai: ผศ. ดร. พงษ์สันธ์ บัณฑิตสกุลชัย
+    photo: pbc.png
+    info: Assistant Professor, Transportation Engineering
+    email: Pongsun.B@chula.ac.th
+    office: CE Building, Room 527
+    phone: "0-2218-7857"
+    scholar: https://scholar.google.com/citations?user=oLV6IeQAAAAJ&hl=en
+    researchgate: https://www.researchgate.net/profile/Pongsun-Bunditsakulchai-2
+    department_page: https://civil.eng.chula.ac.th/web/pongsun-bunditsakulchai/
+    bio: Assistant Professor in Transportation Engineering, Department of Civil Engineering, Chulalongkorn University. Deputy Head of Department for Student Affairs. Research in logistics and supply-chain management, sustainable urban development, transportation economics and policy, multi-regional input-output analysis, and spatial CGE modelling.
+    education:
+      - Ph.D. (Information Science), Tohoku University, Japan (2006)
+      - M.S. (Information Science), Tohoku University, Japan (2003)
+      - B.Eng. (Civil Engineering), Chulalongkorn University, Thailand (2000)
+    interests:
+      - Logistics and supply-chain management
+      - Sustainable urban development
+      - Transportation economics and policy
+      - Multi-regional input-output analysis
+      - Spatial computable general equilibrium modelling

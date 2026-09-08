@@ -1,0 +1,23 @@
+{
+  "walk_speed_kmh": 4.0,
+  "walk_speeds_kmh": [
+    3.6,
+    4.0,
+    4.5
+  ],
+  "cutoffs_min": [
+    5,
+    10,
+    15
+  ],
+  "edge_buffer_m": 40,
+  "n_stations": 165,
+  "n_exits": 557,
+  "n_feeders": 192,
+  "osm_pulled": "2026-09-02",
+  "crs": "EPSG:4326",
+  "study": "BMA 50 districts plus adjacent station districts in Nonthaburi, Samut Prakan, Pathum Thani",
+  "lines": "BTS Sukhumvit/Silom/Gold, MRT Blue/Purple/Yellow/Pink, ARL, SRT Dark Red/Light Red",
+  "also": "Chao Phraya and canal boat piers as optional origins",
+  "speed_note": "4.0 km/h is a typical urban walk in heat; 3.6 slower, 4.5 brisk. Not realtor 5 km/h."
+}

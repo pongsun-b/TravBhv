@@ -1,0 +1,27 @@
+<section class="news-block" aria-labelledby="news-heading">
+<div class="section-head">
+<h2 id="news-heading">News</h2>
+<a href="{{ '/news/' | relative_url }}">All news</a>
+</div>
+<ol class="news-list">
+{% assign news_items = site.data.news.items | default: site.data.news %}
+{% for article in news_items limit:9 %}
+{% assign news_iso = article.date | date: '%Y-%m-%d' %}
+{% assign linked_post = false %}
+{% for post in site.posts %}
+{% assign post_iso = post.date | date: '%Y-%m-%d' %}
+{% if post_iso == news_iso %}
+{% assign linked_post = post %}
+{% endif %}
+{% endfor %}
+<li class="news-item">
+<time class="news-date" datetime="{{ news_iso }}">{{ article.date }}</time>
+{% if linked_post %}
+<p class="news-headline"><a href="{{ linked_post.url | relative_url }}">{{ article.headline }}</a></p>
+{% else %}
+<p class="news-headline">{{ article.headline }}</p>
+{% endif %}
+</li>
+{% endfor %}
+</ol>
+</section>

@@ -1,0 +1,29 @@
+<div class="section-head">
+<h2>People</h2>
+<a href="{{ '/team/' | relative_url }}">Directory</a>
+</div>
+<div class="people-strip">
+{% assign faculty = site.data.team_members.items | default: site.data.team_members %}
+{% for member in faculty %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+<article class="person-card">
+{% if member.photo %}
+{% if member.photo contains "/" %}
+{% assign photo_src = member.photo %}
+{% else %}
+{% assign photo_src = "/images/teampic/" | append: member.photo %}
+{% endif %}
+<img class="person-photo" src="{{ photo_src | relative_url }}" alt="{{ member.name }}">
+{% else %}
+<div class="person-fallback" aria-hidden="true">{{ member.name | slice: 0 }}</div>
+{% endif %}
+<div>
+<h3>{{ member.name }}</h3>
+<p class="person-role">{{ member.info }}</p>
+{% if member.email %}<p class="person-meta"><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>{% endif %}
+</div>
+</article>
+{% endunless %}
+{% endfor %}
+</div>

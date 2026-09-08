@@ -1,0 +1,28 @@
+---
+title: "Publications | Travel Behavior Research Group"
+layout: gridlay
+excerpt: "Selected publications from the Travel Behavior Research Group."
+permalink: /publications/
+---
+<p class="page-kicker">Publications</p>
+<h1>Papers and chapters</h1>
+<p>For a full list, see <a href="{{ site.scholar_url }}" target="_blank" rel="noopener">Google Scholar</a>.</p>
+{% assign papers = site.data.publist.items | default: site.data.publist %}
+{% assign groups = "Transport|Environment and food|Economy" | split: "|" %}
+{% for group in groups %}
+<h2>{{ group }}</h2>
+<ol class="pub-list">
+{% for publi in papers %}
+{% if publi.theme == group %}
+<li class="pub-item">
+<h3>{{ publi.title }}</h3>
+<p class="pub-authors">{{ publi.authors }}</p>
+{% if publi.description %}<p class="pub-desc">{{ publi.description }}</p>{% endif %}
+{% if publi.link.url %}
+<p class="pub-link"><a href="{{ publi.link.url }}" target="_blank" rel="noopener">{{ publi.link.display }}</a></p>
+{% endif %}
+</li>
+{% endif %}
+{% endfor %}
+</ol>
+{% endfor %}

@@ -1,0 +1,7 @@
+# News on the home page and /news/
+# Prefer the /admin editor. Backup: copy a block, paste at the top, change the text.
+items:
+  - date: 5 May 2024
+    headline: We collaborated with HTOC and KMITL on working to increase highway safety in Thailand.
+  - date: 1 October 2023
+    headline: It is officially all starting!

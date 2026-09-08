@@ -1,0 +1,17 @@
+{% comment %}
+Sets is_placeholder for the current `member` hash.
+Skips empty names, placeholder emails (xxxxx...), and names whose last token is X.
+{% endcomment %}
+{% assign is_placeholder = false %}
+{% assign _email = member.email | default: "" | downcase | strip %}
+{% assign _name = member.name | default: "" | strip %}
+{% if _name == "" %}
+  {% assign is_placeholder = true %}
+{% endif %}
+{% if _email contains "xxxxx" %}
+  {% assign is_placeholder = true %}
+{% endif %}
+{% assign _last = _name | split: " " | last %}
+{% if _last == "X" or _last == "x" %}
+  {% assign is_placeholder = true %}
+{% endif %}

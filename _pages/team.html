@@ -1,0 +1,88 @@
+---
+title: "People | Travel Behavior Research Group"
+layout: gridlay
+excerpt: "Faculty and researchers of the Travel Behavior Research Group."
+permalink: /team/
+---
+<p class="page-kicker">People</p>
+<h1>The group</h1>
+<p>The group is based in the Department of Civil Engineering at Chulalongkorn University.</p>
+{% assign faculty = site.data.team_members.items | default: site.data.team_members %}
+{% assign students = site.data.students.items | default: site.data.students %}
+<h2>Faculty</h2>
+{% assign faculty_count = 0 %}
+{% for member in faculty %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+{% assign faculty_count = faculty_count | plus: 1 %}
+<div class="faculty-block">
+<article class="person-row">
+{% if member.photo %}
+{% if member.photo contains "/" %}
+{% assign photo_src = member.photo %}
+{% else %}
+{% assign photo_src = "/images/teampic/" | append: member.photo %}
+{% endif %}
+<img class="person-photo" src="{{ photo_src | relative_url }}" alt="{{ member.name }}">
+{% else %}
+<div class="person-fallback" aria-hidden="true">{{ member.name | slice: 0 }}</div>
+{% endif %}
+<div>
+<h3>{{ member.name }}</h3>
+{% if member.thai %}<p class="person-role">{{ member.thai }}</p>{% endif %}
+<p class="person-role">{{ member.info }}</p>
+{% if member.email %}<p class="person-meta">Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a></p>{% endif %}
+{% if member.office %}<p class="person-meta">Office: {{ member.office }}</p>{% endif %}
+{% if member.phone %}<p class="person-meta">Phone: {{ member.phone }}</p>{% endif %}
+{% if member.scholar %}
+<p class="person-meta"><a href="{{ member.scholar }}" target="_blank" rel="noopener">Google Scholar</a></p>
+{% elsif member.email == site.email %}
+<p class="person-meta"><a href="{{ site.scholar_url }}" target="_blank" rel="noopener">Google Scholar</a></p>
+{% endif %}
+{% if member.researchgate %}<p class="person-meta"><a href="{{ member.researchgate }}" target="_blank" rel="noopener">ResearchGate</a></p>{% endif %}
+{% if member.department_page %}<p class="person-meta"><a href="{{ member.department_page }}" target="_blank" rel="noopener">Department profile</a></p>{% endif %}
+{% if member.bio %}<p class="person-bio">{{ member.bio }}</p>{% endif %}
+{% if member.education %}
+<ul class="person-educ">
+{% for ed in member.education %}
+<li>{{ ed }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% if member.interests %}
+<p class="person-meta">Research: {{ member.interests | join: "; " }}.</p>
+{% endif %}
+</div>
+</article>
+</div>
+{% endunless %}
+{% endfor %}
+{% if faculty_count == 0 %}
+<p class="empty-note">Faculty listings will appear here when they are added to the group data files.</p>
+{% endif %}
+{% assign student_count = 0 %}
+{% for member in students %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+{% assign student_count = student_count | plus: 1 %}
+{% endunless %}
+{% endfor %}
+<h2>Students</h2>
+{% if student_count > 0 %}
+<div class="people-strip">
+{% for member in students %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+<article class="person-card">
+<div>
+<h3>{{ member.name }}</h3>
+{% if member.info %}<p class="person-role">{{ member.info }}</p>{% endif %}
+{% if member.email %}<p class="person-meta"><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>{% endif %}
+</div>
+</article>
+{% endunless %}
+{% endfor %}
+</div>
+{% else %}
+<p class="empty-note">Students are listed here as they join the group.</p>
+{% endif %}

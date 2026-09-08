@@ -1,0 +1,69 @@
+---
+title: "Access | Walk to urban rail in Bangkok"
+layout: default
+excerpt: "Walk-isochrone map to urban rail, BRT, and boat piers in Bangkok. Typical walk 4.0 km/h on the OpenStreetMap walk graph."
+permalink: /access/
+map: true
+---
+<div class="access-page">
+  <section class="access-intro wrap">
+    <p class="page-kicker">Access</p>
+    <h1>Walk to urban rail</h1>
+    <p class="lede">Minutes from a station exit on the street network. Typical walk is 4.0 km/h — slower in heat than the 4.5–5 km/h “realtor” speed. White under 5 minutes, gold 5–10, orange 10–15, red beyond 15.</p>
+  </section>
+
+  <div class="access-stage">
+    <div id="access-map"
+         role="region"
+         aria-label="Walk-isochrone map of Bangkok"
+         data-base="{{ '/access-data/' | relative_url }}">
+      <p class="access-loading">Loading map…</p>
+    </div>
+    <div class="access-panel">
+      <fieldset>
+        <legend>Walk speed</legend>
+        <label><input type="radio" name="access-speed" value="36"> 3.6 km/h slow</label>
+        <label><input type="radio" name="access-speed" value="40" checked> 4.0 km/h typical</label>
+        <label><input type="radio" name="access-speed" value="45"> 4.5 km/h brisk</label>
+      </fieldset>
+      <fieldset>
+        <legend>View</legend>
+        <label><input type="radio" name="access-view" value="combined" checked> 5 / 10 / 15 min</label>
+        <label><input type="radio" name="access-view" value="gaps10"> Gaps beyond 10 min</label>
+        <label><input type="radio" name="access-view" value="gaps15"> Gaps beyond 15 min</label>
+      </fieldset>
+      <fieldset>
+        <legend>Access</legend>
+        <label><input type="checkbox" id="tog-all"> Also boat piers</label>
+        <label><input type="checkbox" id="tog-khet" checked> Districts</label>
+        <label><input type="checkbox" id="tog-rail" checked> Rail</label>
+        <label><input type="checkbox" id="tog-stations" checked> Stations</label>
+      </fieldset>
+      <p class="access-legend">
+        <span><i class="swatch swatch-w"></i> &lt; 5 min</span>
+        <span><i class="swatch swatch-g"></i> 5–10 min</span>
+        <span><i class="swatch swatch-o"></i> 10–15 min</span>
+        <span><i class="swatch swatch-r"></i> &gt; 15 min</span>
+      </p>
+      <p class="access-meta" id="access-meta">4.0 km/h · urban rail</p>
+      <p><a class="btn" href="{{ '/access-data/access-16x9.png' | relative_url }}" download>Download 16:9 PNG</a></p>
+    </div>
+  </div>
+
+  <section class="access-notes wrap">
+    <h2>How it is built</h2>
+    <ul class="principles">
+      <li><strong>Origins</strong> Station exits (OSM subway entrances), not the station centroid. If no exit is mapped, the station node is used.</li>
+      <li><strong>Network</strong> OpenStreetMap walk graph. Default speed 4.0 km/h (67 m/min) — a typical walk in Bangkok heat, not the 5 km/h realtor figure. Slow 3.6 km/h and brisk 4.5 km/h are precomputed. 10 minutes at 4.0 km/h is 667 m on the network; 15 minutes is 1 km.</li>
+      <li><strong>Unions</strong> Isochrone per exit, unioned by station, then across all stations. White is the 10-minute union; orange is 15 minus 10; red is the study area minus 15.</li>
+      <li><strong>Study area</strong> All 50 Bangkok districts, plus districts in Nonthaburi, Samut Prakan, and Pathum Thani that contain a selected station.</li>
+      <li><strong>Lines</strong> Default is urban rail: BTS Sukhumvit, Silom, and Gold; MRT Blue, Purple, Yellow, and Pink; Airport Rail Link; SRT Dark Red and Light Red. Optional toggle adds Chao Phraya and canal boat piers. Not conventional SRT or unopened Orange.</li>
+    </ul>
+    <p>Parks, rivers, and expressway boxes stay red when they have no walkable OSM edges. Missing exits in OSM make some stations look worse than they are. Speed options are precomputed layers, not a live router.</p>
+    <h2>Related lab work</h2>
+    <p>The Public Transport Accessibility Index (PTAI) is a demand-weighted generalized-cost index for 88 inner-Bangkok subdistricts. This map is only the walk to urban rail. They answer different questions; PTAI routing data cannot be republished here.</p>
+    <p><a href="{{ '/data/' | relative_url }}">GeoJSON and poster</a> · <a href="{{ '/research/' | relative_url }}">Research</a></p>
+  </section>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="{{ '/js/access-map.js' | relative_url }}"></script>

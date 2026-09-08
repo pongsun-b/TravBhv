@@ -1,0 +1,56 @@
+# How to update the TBRG website
+
+You do not need to know Git, YAML, or coding. After the new site is published, this is the usual way to change it.
+
+## Before you start
+
+Someone with access to the GitHub repository (`pongsun-b/TravBhv`) must invite you as a collaborator once. You will log in with that GitHub account.
+
+## Everyday editing
+
+1. Open [the editor](https://pongsun-b.github.io/TravBhv/admin/).
+2. Click **Login with GitHub** and approve access.
+3. Choose a section (Faculty, Students, Publications, News, Home slides, or Blog posts).
+4. Change the fields (or click **Add** for a new person, paper, news item, slide, or post).
+5. Click **Save** / **Publish**.
+6. Wait one or two minutes, then refresh the public site: https://pongsun-b.github.io/TravBhv
+
+### What each section is for
+
+| Section | Use it for |
+|---|---|
+| Faculty | Names, roles, emails, photos, short bios |
+| Students | Student names and emails |
+| Publications | Paper title, authors, short description, DOI/link |
+| News | Date + one headline |
+| Home slides | Homepage banners (image optional; title and caption) |
+| Blog posts | Longer notes. Short announcements stay in News. |
+
+Photos: upload a square-ish portrait. It will show on the People page.
+
+The **Access** map is not edited here. It is built by `scripts/access/build.py` and stored in `access-data/`.
+
+If a name or email looks like a placeholder (`xxxxx`, or a last name that is just `X`), the public site hides that person on purpose.
+
+Home slides: leave the image blank for a type-only banner. Do not reuse leftover Cambridge photos (`materials.jpg`, `printer-fleet.jpg`).
+
+## If “Login with GitHub” does not work
+
+The editor needs a one-time GitHub login app (OAuth). That is a maintainer job, not something professors should set up. Until it is done, use the backup below.
+
+### Backup: edit in the GitHub website
+
+You must be logged into GitHub. Click a link, then the pencil icon, then **Commit changes**.
+
+- [News](https://github.com/pongsun-b/TravBhv/edit/main/_data/news.yml)
+- [Publications](https://github.com/pongsun-b/TravBhv/edit/main/_data/publist.yml)
+- [Faculty](https://github.com/pongsun-b/TravBhv/edit/main/_data/team_members.yml)
+- [Students](https://github.com/pongsun-b/TravBhv/edit/main/_data/students.yml)
+- [Home slides](https://github.com/pongsun-b/TravBhv/edit/main/_data/slides.yml)
+- [Blog posts](https://github.com/pongsun-b/TravBhv/tree/main/_posts)
+
+Copy an existing block and change the text. Keep the dashes and spacing the same.
+
+## Maintainer note (not for everyday editors)
+
+GitHub backend for Decap CMS needs a GitHub OAuth App plus a tiny auth callback (for example the [Decap GitHub OAuth provider](https://github.com/vencax/netlify-cms-github-oauth-provider) or a Cloudflare Worker). Homepage URL: `https://pongsun-b.github.io/TravBhv`. Then set `backend.base_url` in `admin/config.yml` to that callback origin. Professors do not do this step.

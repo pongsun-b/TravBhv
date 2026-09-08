@@ -1,0 +1,15 @@
+# Homepage slides. Prefer the /admin editor (Home slides).
+# Leave image empty for a type-only slide. Do not use leftover Cambridge photos.
+items:
+  - image: ""
+    kicker: Bangkok
+    title: How people move through the city
+    caption: Everyday travel choices shape congestion, access, and what gets built next.
+  - image: ""
+    kicker: Research
+    title: Engineering, surveys, planning
+    caption: Three lines of work, one group. The diagram lives on the Research page, uncropped.
+  - image: ""
+    kicker: Collaboration
+    title: Highway safety in Thailand
+    caption: Work with HTOC and KMITL, 5 May 2024.

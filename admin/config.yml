@@ -1,0 +1,99 @@
+backend:
+  name: github
+  repo: pongsun-b/TravBhv
+  branch: main
+
+site_url: https://pongsun-b.github.io/TravBhv
+display_url: https://pongsun-b.github.io/TravBhv
+logo_url: https://pongsun-b.github.io/TravBhv/favicon.ico
+
+publish_mode: simple
+locale: en
+
+media_folder: images/teampic
+public_folder: /images/teampic
+
+collections:
+  - name: site_content
+    label: Site content
+    files:
+      - name: faculty
+        label: Faculty
+        file: _data/team_members.yml
+        fields:
+          - name: items
+            label: Faculty members
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: info, widget: string, required: false, hint: "e.g. Assistant Professor" }
+              - { label: Email, name: email, widget: string, required: false }
+              - { label: Photo, name: photo, widget: image, required: false, media_folder: images/teampic, public_folder: "", choose_url: false }
+              - { label: Bio, name: bio, widget: text, required: false }
+      - name: students
+        label: Students
+        file: _data/students.yml
+        fields:
+          - name: items
+            label: Students
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Role, name: info, widget: string, required: false }
+              - { label: Email, name: email, widget: string, required: false }
+      - name: publications
+        label: Publications
+        file: _data/publist.yml
+        fields:
+          - name: items
+            label: Papers
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Theme, name: theme, widget: select, options: ["Transport", "Environment and food", "Economy"], required: false }
+              - { label: Authors, name: authors, widget: string, hint: "e.g. Bunditsakulchai P., Liu C." }
+              - { label: Short description, name: description, widget: text, required: false }
+              - label: Link
+                name: link
+                widget: object
+                fields:
+                  - { label: URL, name: url, widget: string, hint: "DOI or paper link" }
+                  - { label: Link text, name: display, widget: string, hint: "e.g. DOI: 10.1234/..." }
+      - name: news
+        label: News
+        file: _data/news.yml
+        fields:
+          - name: items
+            label: News items
+            widget: list
+            summary: "{{fields.date}} — {{fields.headline}}"
+            fields:
+              - { label: Date, name: date, widget: string, hint: "e.g. 31 Aug 2026" }
+              - { label: Headline, name: headline, widget: text }
+      - name: slides
+        label: Home slides
+        file: _data/slides.yml
+        fields:
+          - name: items
+            label: Slides
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Image, name: image, widget: image, required: false, media_folder: images, public_folder: /images, hint: "Leave empty for a type-only slide. Do not use leftover Cambridge photos." }
+              - { label: Kicker, name: kicker, widget: string, required: false }
+              - { label: Title, name: title, widget: string }
+              - { label: Caption, name: caption, widget: text, required: false }
+  - name: blog
+    label: Blog posts
+    folder: _posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Body, name: body, widget: markdown }
