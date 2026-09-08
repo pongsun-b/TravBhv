@@ -263,7 +263,7 @@ main { flex: 1 0 auto; padding: 2.5rem 0 5rem; }
 
 .pillars {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   margin: 0 0 4rem;
 }
@@ -446,10 +446,6 @@ hr {
   .pillars { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .news-item { grid-template-columns: 1fr; gap: 0.3rem; }
-  .faculty-block .person-row,
-  .person-card { grid-template-columns: 72px 1fr; }
-  .faculty-block .person-photo,
-  .faculty-block .person-fallback { width: 72px; height: 90px; }
   .site-header { position: sticky; }
   .brand-name { font-size: 0.95rem; }
 }

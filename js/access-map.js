@@ -24,6 +24,16 @@
   var useAll = false;
   var classLayers = {};
   var classesLayer, khetLayer, railLayer, stationsLayer, feedersLayer, isoLayer, studyLayer;
+  var metaInfo = null;
+
+  function updateMeta() {
+    var box = document.getElementById("access-meta");
+    if (!box) return;
+    var sp = speed === "36" ? "3.6" : speed === "45" ? "4.5" : "4.0";
+    var extra = useAll ? " · rail + boats" : " · urban rail";
+    var n = metaInfo && metaInfo.n_stations != null ? " · " + metaInfo.n_stations + " stations" : "";
+    box.textContent = sp + " km/h" + extra + n;
+  }
 
   function classStyle(feature) {
     var klass = feature.properties && feature.properties.class;
@@ -94,7 +104,7 @@
       var rail = pack[2];
       var stations = pack[3];
       var study = pack[4];
-      var meta = pack[5];
+      metaInfo = pack[5];
       var feeders = pack[6];
 
       classLayers["classes_40.geojson"] = classes;
@@ -212,14 +222,6 @@
       var loading = el.querySelector(".access-loading");
       if (loading) loading.remove();
 
-      function updateMeta() {
-        var box = document.getElementById("access-meta");
-        if (!box) return;
-        var sp = speed === "36" ? "3.6" : speed === "45" ? "4.5" : "4.0";
-        var extra = useAll ? " · rail + boats" : " · urban rail";
-        var n = meta && meta.n_stations != null ? meta.n_stations + " stations" : "";
-        box.textContent = sp + " km/h" + extra + (n ? " · " + n : "");
-      }
       updateMeta();
     })
     .catch(function (err) {
@@ -238,12 +240,7 @@
     input.addEventListener("change", function () {
       speed = input.value;
       switchLayer();
-      var box = document.getElementById("access-meta");
-      if (box) {
-        var sp = speed === "36" ? "3.6" : speed === "45" ? "4.5" : "4.0";
-        var extra = useAll ? " · rail + boats" : " · urban rail";
-        box.textContent = sp + " km/h" + extra;
-      }
+      updateMeta();
     });
   });
   var allBox = document.getElementById("tog-all");
@@ -255,11 +252,7 @@
         if (useAll) feedersLayer.addTo(map);
         else map.removeLayer(feedersLayer);
       }
-      var box = document.getElementById("access-meta");
-      if (box) {
-        var sp = speed === "36" ? "3.6" : speed === "45" ? "4.5" : "4.0";
-        box.textContent = sp + " km/h · " + (useAll ? "rail + boats" : "urban rail");
-      }
+      updateMeta();
     });
   }
 

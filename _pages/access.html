@@ -54,8 +54,8 @@ map: true
     <h2>How it is built</h2>
     <ul class="principles">
       <li><strong>Origins</strong> Station exits (OSM subway entrances), not the station centroid. If no exit is mapped, the station node is used.</li>
-      <li><strong>Network</strong> OpenStreetMap walk graph. Default speed 4.0 km/h (67 m/min) — a typical walk in Bangkok heat, not the 5 km/h realtor figure. Slow 3.6 km/h and brisk 4.5 km/h are precomputed. 10 minutes at 4.0 km/h is 667 m on the network; 15 minutes is 1 km.</li>
-      <li><strong>Unions</strong> Isochrone per exit, unioned by station, then across all stations. White is the 10-minute union; orange is 15 minus 10; red is the study area minus 15.</li>
+      <li><strong>Network</strong> OpenStreetMap walk graph. Default speed 4.0 km/h (67 m/min) — a typical walk in Bangkok heat, not the 5 km/h realtor figure. Slow 3.6 km/h and brisk 4.5 km/h are precomputed. At 4.0 km/h, 5 minutes is 333 m on the network; 10 minutes is 667 m; 15 minutes is 1 km.</li>
+      <li><strong>Unions</strong> Isochrone per exit, unioned by station, then across all stations. White is under 5 minutes; gold is 5–10; orange is 10–15; red is the study area beyond 15.</li>
       <li><strong>Study area</strong> All 50 Bangkok districts, plus districts in Nonthaburi, Samut Prakan, and Pathum Thani that contain a selected station.</li>
       <li><strong>Lines</strong> Default is urban rail: BTS Sukhumvit, Silom, and Gold; MRT Blue, Purple, Yellow, and Pink; Airport Rail Link; SRT Dark Red and Light Red. Optional toggle adds Chao Phraya and canal boat piers. Not conventional SRT or unopened Orange.</li>
     </ul>

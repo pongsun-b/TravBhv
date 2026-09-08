@@ -62,3 +62,7 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+    values:
+      image: /access-data/access-16x9.jpg

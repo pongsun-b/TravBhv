@@ -73,19 +73,6 @@ collections:
             fields:
               - { label: Date, name: date, widget: string, hint: "e.g. 31 Aug 2026" }
               - { label: Headline, name: headline, widget: text }
-      - name: slides
-        label: Home slides
-        file: _data/slides.yml
-        fields:
-          - name: items
-            label: Slides
-            widget: list
-            summary: "{{fields.title}}"
-            fields:
-              - { label: Image, name: image, widget: image, required: false, media_folder: images, public_folder: /images, hint: "Leave empty for a type-only slide. Do not use leftover Cambridge photos." }
-              - { label: Kicker, name: kicker, widget: string, required: false }
-              - { label: Title, name: title, widget: string }
-              - { label: Caption, name: caption, widget: text, required: false }
   - name: blog
     label: Blog posts
     folder: _posts
