@@ -1,0 +1,22 @@
+{% comment %}
+Sets linked_post for the current `article` from news.yml.
+Prefer article.note (Jekyll post slug); else last Note on the same calendar date.
+{% endcomment %}
+{% assign linked_post = false %}
+{% assign _note = article.note | default: "" | strip %}
+{% if _note != "" %}
+{% for post in site.posts %}
+{% if post.slug == _note %}
+{% assign linked_post = post %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% unless linked_post %}
+{% assign _news_iso = article.date | date: '%Y-%m-%d' %}
+{% for post in site.posts %}
+{% assign _post_iso = post.date | date: '%Y-%m-%d' %}
+{% if _post_iso == _news_iso %}
+{% assign linked_post = post %}
+{% endif %}
+{% endfor %}
+{% endunless %}

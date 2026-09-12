@@ -1,5 +1,5 @@
 ---
-title: "News | Travel Behavior Research Group"
+title: "News"
 layout: textlay
 excerpt: "News from the Travel Behavior Research Group."
 sitemap: false

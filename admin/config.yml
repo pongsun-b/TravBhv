@@ -73,6 +73,7 @@ collections:
             fields:
               - { label: Date, name: date, widget: string, hint: "e.g. 31 Aug 2026" }
               - { label: Headline, name: headline, widget: text }
+              - { label: Note slug, name: note, widget: string, required: false, hint: "Optional. Post slug to link, e.g. walk-access-map. If empty, a Note on the same calendar date is used." }
       - name: extras
         label: Extra pages
         file: _data/extras.yml

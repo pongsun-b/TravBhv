@@ -1,5 +1,5 @@
 ---
-title: "Projects | Travel Behavior Research Group | Department of Civil Engineering at Chulalongkorn University"
+title: "Projects"
 layout: textlay
 excerpt: "Projects | Travel Behavior Research Group | Department of Civil Engineering at Chulalongkorn University"
 sitemap: false

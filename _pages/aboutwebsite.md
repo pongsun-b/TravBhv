@@ -1,5 +1,5 @@
 ---
-title: "About this site | Travel Behavior Research Group"
+title: "About this site"
 layout: textlay
 excerpt: "Notes on the Travel Behavior Research Group website."
 sitemap: false

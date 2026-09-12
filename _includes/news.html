@@ -7,13 +7,7 @@
 {% assign news_items = site.data.news.items | default: site.data.news %}
 {% for article in news_items limit:9 %}
 {% assign news_iso = article.date | date: '%Y-%m-%d' %}
-{% assign linked_post = false %}
-{% for post in site.posts %}
-{% assign post_iso = post.date | date: '%Y-%m-%d' %}
-{% if post_iso == news_iso %}
-{% assign linked_post = post %}
-{% endif %}
-{% endfor %}
+{% include news_link.html %}
 <li class="news-item">
 <time class="news-date" datetime="{{ news_iso }}">{{ article.date }}</time>
 {% if linked_post %}
