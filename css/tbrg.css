@@ -1,21 +1,25 @@
 /* TBRG — dark transport-editorial
-   Charcoal ground, off-white serif headlines, geometric sans UI,
-   faint steel-blue map-grid, thin amber accents. */
+   Warm charcoal ground, off-white serif headlines, geometric sans UI.
+   Accent follows ARIISE (eng.chula neighbour): primary #8B050D,
+   logo red #b7000b, soft #ffbdc1, taupe #504B4C / #B7AFB2.
+   --accent is a lifted crimson so links still read on charcoal. */
 
 :root {
-  --bg: #0c1116;
-  --bg-raised: #121820;
-  --bg-card: #161d26;
-  --ink: #f4efe6;
-  --ink-soft: #c9c3b8;
-  --muted: #8b95a0;
-  --line: rgba(150, 175, 198, 0.14);
-  --line-strong: rgba(201, 162, 39, 0.35);
-  --accent: #c9a227;
-  --accent-hover: #e0bc4a;
-  --steel: rgba(120, 155, 185, 0.08);
-  --steel-line: rgba(120, 155, 185, 0.11);
-  --steel-artery: rgba(120, 155, 185, 0.18);
+  --bg: #110d0e;
+  --bg-raised: #1a1314;
+  --bg-card: #211618;
+  --bg-glass: rgba(17, 13, 14, 0.9);
+  --ink: #f6eee8;
+  --ink-soft: #d4c6c4;
+  --muted: #9a8e90;
+  --line: rgba(183, 175, 178, 0.16);
+  --line-strong: rgba(139, 5, 13, 0.55);
+  --brand: #8b050d;
+  --accent: #e0565e;
+  --accent-hover: #ffbdc1;
+  --steel: rgba(139, 5, 13, 0.07);
+  --steel-line: rgba(183, 175, 178, 0.1);
+  --steel-artery: rgba(183, 0, 11, 0.14);
   --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
   --wrap: min(1120px, calc(100% - 3rem));
@@ -60,8 +64,8 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(ellipse 70% 40% at 80% -10%, rgba(90, 120, 150, 0.16), transparent 55%),
-    radial-gradient(ellipse 50% 30% at 10% 100%, rgba(80, 100, 80, 0.08), transparent 50%);
+    radial-gradient(ellipse 70% 40% at 80% -10%, rgba(139, 5, 13, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 30% at 10% 100%, rgba(80, 64, 66, 0.12), transparent 50%);
 }
 
 body > * { position: relative; z-index: 1; }
@@ -118,7 +122,7 @@ main { flex: 1 0 auto; padding: 2.5rem 0 5rem; }
 /* Header */
 .site-header {
   border-bottom: 1px solid var(--line);
-  background: rgba(12, 17, 22, 0.88);
+  background: var(--bg-glass);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -204,7 +208,7 @@ main { flex: 1 0 auto; padding: 2.5rem 0 5rem; }
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 2.75rem 0 2.4rem;
-  background: rgba(12, 17, 22, 0.92);
+  background: var(--bg-glass);
   margin-top: auto;
 }
 .footer-grid {
@@ -330,7 +334,7 @@ main { flex: 1 0 auto; padding: 2.5rem 0 5rem; }
   min-width: 0;
   background: var(--bg-card);
   border: 1px solid var(--line);
-  border-top: 2px solid var(--accent);
+  border-top: 2px solid var(--brand);
   padding: 1.2rem 1.15rem 1.3rem;
 }
 .pillar h3 {
@@ -374,7 +378,7 @@ main { flex: 1 0 auto; padding: 2.5rem 0 5rem; }
   width: 88px;
   height: 110px;
   object-fit: cover;
-  background: #1b2430;
+  background: var(--bg-raised);
   border: 1px solid var(--line);
 }
 .person-fallback {
@@ -591,7 +595,7 @@ main:has(.embed-page) { padding-top: 0; }
   top: 1rem;
   left: 1rem;
   z-index: 1100;
-  background: rgba(12, 17, 22, 0.92);
+  background: var(--bg-glass);
   color: var(--ink-soft);
   border: 1px solid var(--line);
   padding: 0.9rem 1rem 1rem;
@@ -659,7 +663,7 @@ main:has(.embed-page) { padding-top: 0; }
     display: none;
     position: absolute;
     left: 0; right: 0; top: 100%;
-    background: #0e141b;
+    background: var(--bg-raised);
     border-bottom: 1px solid var(--line);
     padding: 0.5rem 1rem 1rem;
   }
