@@ -221,6 +221,16 @@ main { flex: 1 0 auto; padding: 2.5rem 0 5rem; }
 }
 .site-footer p { color: var(--muted); font-size: 0.92rem; margin-bottom: 0.5em; }
 .site-footer a { color: var(--ink-soft); }
+.footer-lockup { margin: 0 0 0.85rem; }
+.footer-lockup a { display: inline-block; color: inherit; }
+.footer-lockup a:hover { text-decoration: none; }
+.footer-lockup img {
+  display: block;
+  height: 2.55rem;
+  width: auto;
+  max-width: min(100%, 20rem);
+  border: 1px solid var(--line);
+}
 .footer-links a + a::before {
   content: " · ";
   color: var(--muted);
@@ -364,7 +374,6 @@ main { flex: 1 0 auto; padding: 2.5rem 0 5rem; }
   width: 88px;
   height: 110px;
   object-fit: cover;
-  filter: grayscale(0.25) contrast(1.05);
   background: #1b2430;
   border: 1px solid var(--line);
 }
@@ -388,16 +397,18 @@ main { flex: 1 0 auto; padding: 2.5rem 0 5rem; }
 .person-meta a { overflow-wrap: anywhere; }
 .person-educ { margin: 0.6rem 0 0; padding-left: 1rem; font-size: 0.9rem; color: var(--muted); }
 
-.faculty-block { margin-bottom: 2.5rem; }
+.faculty-block { margin: 0 0 2.5rem; }
 .faculty-block .person-row {
-  grid-template-columns: 140px 1fr;
-  padding: 1.5rem;
+  grid-template-columns: 12.5rem minmax(0, 1fr);
+  gap: 1.75rem 2rem;
+  padding: 1.75rem 1.9rem 1.9rem;
 }
 .faculty-block .person-photo,
 .faculty-block .person-fallback {
-  width: 140px;
-  height: 175px;
+  width: 12.5rem;
+  height: 15.6rem;
 }
+.faculty-block h3 { font-size: 1.85rem; }
 
 .news-list { list-style: none; margin: 0; padding: 0; }
 .news-item {
