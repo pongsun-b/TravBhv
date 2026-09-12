@@ -59,10 +59,23 @@
   var btn = document.querySelector('.nav-toggle');
   var nav = document.getElementById('site-nav');
   if (!btn || !nav) return;
+  function setOpen(open) {
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    nav.classList.toggle('is-open', open);
+    document.body.classList.toggle('nav-open', open);
+  }
   btn.addEventListener('click', function () {
-    var open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-    nav.classList.toggle('is-open', !open);
+    setOpen(btn.getAttribute('aria-expanded') !== 'true');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
+  document.addEventListener('click', function (e) {
+    if (btn.getAttribute('aria-expanded') !== 'true') return;
+    if (!e.target.closest('.site-header')) setOpen(false);
   });
 })();
 </script>
