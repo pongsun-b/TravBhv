@@ -39,6 +39,15 @@ map: true
         <label><input type="checkbox" id="tog-rail" checked> Rail</label>
         <label><input type="checkbox" id="tog-stations" checked> Stations</label>
       </fieldset>
+      <label class="access-search">
+        <span>Find a station</span>
+        <input type="search" id="access-find" placeholder="Siam, Tao Poon…" autocomplete="off" spellcheck="false">
+      </label>
+      <ul id="access-find-results" class="access-find-results" hidden></ul>
+      <p class="access-status" id="access-status" hidden></p>
+      <p class="access-locate-row">
+        <button type="button" class="btn" id="access-locate">Use my location</button>
+      </p>
       <p class="access-legend">
         <span><i class="swatch swatch-w"></i> &lt; 5 min</span>
         <span><i class="swatch swatch-g"></i> 5–10 min</span>
@@ -65,5 +74,5 @@ map: true
     <p><a href="{{ '/data/' | relative_url }}">GeoJSON and poster</a> · <a href="{{ '/research/' | relative_url }}">Research</a> · <a href="{{ '/notes/' | relative_url }}">Notes</a></p>
   </section>
 </div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="{{ '/js/leaflet/leaflet.js' | relative_url }}"></script>
 <script src="{{ '/js/access-map.js' | relative_url }}"></script>

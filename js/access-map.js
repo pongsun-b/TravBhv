@@ -5,10 +5,15 @@
   var base = el.getAttribute("data-base") || "/access-data/";
   if (base.slice(-1) !== "/") base += "/";
 
-  var map = L.map(el, { zoomControl: true, scrollWheelZoom: true }).setView(
-    [13.75, 100.55],
-    11
-  );
+  var reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var map = L.map(el, {
+    zoomControl: true,
+    scrollWheelZoom: false,
+    tapTolerance: 15
+  }).setView([13.75, 100.55], 11);
 
   L.tileLayer(
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
@@ -19,12 +24,38 @@
     }
   ).addTo(map);
 
+  el.addEventListener("click", function () {
+    map.scrollWheelZoom.enable();
+  });
+  el.addEventListener("mouseleave", function () {
+    map.scrollWheelZoom.disable();
+  });
+
   var view = "combined";
   var speed = "40";
   var useAll = false;
   var classLayers = {};
   var classesLayer, khetLayer, railLayer, stationsLayer, feedersLayer, isoLayer, studyLayer;
   var metaInfo = null;
+  var stationIndex = [];
+  var locMarker, locCircle;
+
+  function fly(latlng, zoom) {
+    if (reduceMotion) map.setView(latlng, zoom);
+    else map.flyTo(latlng, zoom, { duration: 0.55 });
+  }
+
+  function setStatus(msg) {
+    var box = document.getElementById("access-status");
+    if (!box) return;
+    if (msg) {
+      box.hidden = false;
+      box.textContent = msg;
+    } else {
+      box.hidden = true;
+      box.textContent = "";
+    }
+  }
 
   function updateMeta() {
     var box = document.getElementById("access-meta");
@@ -72,12 +103,16 @@
       showClasses(classLayers[name]);
       return;
     }
+    var sp = speed === "36" ? "3.6" : speed === "45" ? "4.5" : "4.0";
+    setStatus("Loading " + sp + " km/h layer…");
     loadJSON(name)
       .then(function (data) {
         classLayers[name] = data;
         showClasses(data);
+        setStatus("");
       })
       .catch(function () {
+        setStatus("");
         if (classLayers["classes.geojson"]) showClasses(classLayers["classes.geojson"]);
       });
   }
@@ -86,6 +121,183 @@
     return fetch(base + name).then(function (r) {
       if (!r.ok) throw new Error(name);
       return r.json();
+    });
+  }
+
+  function hideStationIso() {
+    if (isoLayer && map.hasLayer(isoLayer)) map.removeLayer(isoLayer);
+  }
+
+  function ensureIso(done) {
+    if (isoLayer) {
+      done();
+      return;
+    }
+    loadJSON("station_iso.geojson")
+      .then(function (data) {
+        isoLayer = L.geoJSON(data, {
+          style: function (f) {
+            var band = f.properties && f.properties.band;
+            return {
+              color: band === "10" ? "#888" : "#e07a3d",
+              weight: 1.2,
+              fillOpacity: 0.15,
+              fillColor: band === "10" ? "#fff" : "#e07a3d",
+              opacity: 0
+            };
+          }
+        });
+        done();
+      })
+      .catch(function () {
+        done();
+      });
+  }
+
+  function showStationIso(name) {
+    ensureIso(function () {
+      if (!isoLayer) return;
+      isoLayer.eachLayer(function (lyr) {
+        var same =
+          lyr.feature &&
+          lyr.feature.properties &&
+          lyr.feature.properties.station === name;
+        lyr.setStyle({
+          opacity: same ? 1 : 0,
+          fillOpacity: same ? 0.2 : 0
+        });
+      });
+      if (!map.hasLayer(isoLayer)) isoLayer.addTo(map);
+    });
+  }
+
+  function selectStation(entry) {
+    if (!map.hasLayer(stationsLayer)) {
+      stationsLayer.addTo(map);
+      var box = document.getElementById("tog-stations");
+      if (box) box.checked = true;
+    }
+    fly(entry.latlng, 14);
+    if (entry.layer) entry.layer.openPopup();
+    showStationIso(entry.name);
+    var find = document.getElementById("access-find");
+    if (find) find.value = entry.name;
+    hideResults();
+  }
+
+  function hideResults() {
+    var list = document.getElementById("access-find-results");
+    if (!list) return;
+    list.hidden = true;
+    list.innerHTML = "";
+  }
+
+  function renderResults(hits) {
+    var list = document.getElementById("access-find-results");
+    if (!list) return;
+    list.innerHTML = "";
+    if (!hits.length) {
+      list.hidden = true;
+      return;
+    }
+    hits.forEach(function (entry) {
+      var li = document.createElement("li");
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = entry.label;
+      btn.addEventListener("click", function () {
+        selectStation(entry);
+      });
+      li.appendChild(btn);
+      list.appendChild(li);
+    });
+    list.hidden = false;
+  }
+
+  function norm(s) {
+    return (s || "").toLowerCase().replace(/\s+/g, " ").trim();
+  }
+
+  function searchStations(q) {
+    q = norm(q);
+    if (q.length < 1) return [];
+    var hits = [];
+    for (var i = 0; i < stationIndex.length; i++) {
+      if (stationIndex[i].key.indexOf(q) !== -1) hits.push(stationIndex[i]);
+    }
+    hits.sort(function (a, b) {
+      var a0 = a.key.indexOf(q);
+      var b0 = b.key.indexOf(q);
+      if (a0 !== b0) return a0 - b0;
+      return a.name.localeCompare(b.name);
+    });
+    return hits.slice(0, 8);
+  }
+
+  function wireSearch() {
+    var find = document.getElementById("access-find");
+    if (!find) return;
+    find.addEventListener("input", function () {
+      var hits = searchStations(find.value);
+      renderResults(hits);
+    });
+    find.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        hideResults();
+        find.blur();
+      }
+      if (e.key === "Enter") {
+        e.preventDefault();
+        var hits = searchStations(find.value);
+        if (hits[0]) selectStation(hits[0]);
+      }
+    });
+    document.addEventListener("click", function (e) {
+      if (e.target.closest(".access-search") || e.target.closest(".access-find-results"))
+        return;
+      hideResults();
+    });
+  }
+
+  function wireLocate() {
+    var btn = document.getElementById("access-locate");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      if (!navigator.geolocation) {
+        setStatus("This browser cannot share a location.");
+        return;
+      }
+      setStatus("Finding your location…");
+      map.locate({ enableHighAccuracy: true, timeout: 12000, maximumAge: 30000 });
+    });
+    map.on("locationfound", function (e) {
+      if (locMarker) map.removeLayer(locMarker);
+      if (locCircle) map.removeLayer(locCircle);
+      locMarker = L.circleMarker(e.latlng, {
+        radius: 7,
+        color: "#8b050d",
+        fillColor: "#e0565e",
+        fillOpacity: 1,
+        weight: 2
+      }).addTo(map);
+      locMarker.bindPopup("You are here").openPopup();
+      locCircle = L.circle(e.latlng, {
+        radius: e.accuracy,
+        color: "#8b050d",
+        fillColor: "#e0565e",
+        fillOpacity: 0.08,
+        weight: 1
+      }).addTo(map);
+      var bkk = L.latLng(13.75, 100.55);
+      if (e.latlng.distanceTo(bkk) > 90000) {
+        setStatus("Your location is outside the Bangkok study area.");
+        return;
+      }
+      setStatus("");
+      fly(e.latlng, Math.max(map.getZoom(), 14));
+    });
+    map.on("locationerror", function () {
+      setStatus("Could not read your location. Check the browser permission.");
     });
   }
 
@@ -128,40 +340,14 @@
         interactive: false
       }).addTo(map);
 
-      function ensureIso(done) {
-        if (isoLayer) {
-          done();
-          return;
-        }
-        loadJSON("station_iso.geojson")
-          .then(function (data) {
-            isoLayer = L.geoJSON(data, {
-              style: function (f) {
-                var band = f.properties && f.properties.band;
-                return {
-                  color: band === "10" ? "#888" : "#e07a3d",
-                  weight: 1.2,
-                  fillOpacity: 0.15,
-                  fillColor: band === "10" ? "#fff" : "#e07a3d",
-                  opacity: 0
-                };
-              }
-            });
-            done();
-          })
-          .catch(function () {
-            done();
-          });
-      }
-
       stationsLayer = L.geoJSON(stations, {
         pointToLayer: function (feature, latlng) {
           return L.circleMarker(latlng, {
-            radius: 3.5,
+            radius: 6,
             color: "#111",
             fillColor: "#111",
             fillOpacity: 1,
-            weight: 1
+            weight: 2
           });
         },
         onEachFeature: function (feature, layer) {
@@ -171,21 +357,18 @@
           if (p.line) bits.push(p.line);
           if (p.exits) bits.push(p.exits + " mapped exits");
           layer.bindPopup(bits.join("<br>"));
-          layer.on("click", function () {
-            ensureIso(function () {
-              if (!isoLayer) return;
-              isoLayer.eachLayer(function (lyr) {
-                var same =
-                  lyr.feature &&
-                  lyr.feature.properties &&
-                  lyr.feature.properties.station === name;
-                lyr.setStyle({
-                  opacity: same ? 1 : 0,
-                  fillOpacity: same ? 0.2 : 0
-                });
-              });
-              if (!map.hasLayer(isoLayer)) isoLayer.addTo(map);
-            });
+          var label = p.line ? name + " · " + p.line : name;
+          stationIndex.push({
+            name: name,
+            line: p.line || "",
+            label: label,
+            key: norm(name + " " + (p.line || "")),
+            latlng: layer.getLatLng(),
+            layer: layer
+          });
+          layer.on("click", function (e) {
+            L.DomEvent.stopPropagation(e);
+            showStationIso(name);
           });
         }
       }).addTo(map);
@@ -196,7 +379,7 @@
             var kind = feature.properties && feature.properties.kind;
             var boat = kind === "boat";
             return L.circleMarker(latlng, {
-              radius: 4,
+              radius: 5,
               color: boat ? "#1d4e89" : "#2c6e49",
               fillColor: boat ? "#1d4e89" : "#2c6e49",
               fillOpacity: 0.95,
@@ -211,6 +394,10 @@
         });
       }
 
+      map.on("click", function () {
+        hideStationIso();
+      });
+
       var bounds = classesLayer.getBounds();
       if (bounds.isValid()) {
         var wide = window.innerWidth > 720;
@@ -221,8 +408,11 @@
       }
       var loading = el.querySelector(".access-loading");
       if (loading) loading.remove();
+      map.invalidateSize();
 
       updateMeta();
+      wireSearch();
+      wireLocate();
     })
     .catch(function (err) {
       el.innerHTML =
