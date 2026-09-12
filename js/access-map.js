@@ -35,7 +35,8 @@
   var speed = "40";
   var useAll = false;
   var classLayers = {};
-  var classesLayer, khetLayer, railLayer, stationsLayer, feedersLayer, isoLayer, studyLayer;
+  var classesLayer, khetLayer, railLayer, stationsLayer, feedersLayer, isoLayer, studyLayer, primalLayer;
+  var primalData = null;
   var metaInfo = null;
   var stationIndex = [];
   var locMarker, locCircle;
@@ -60,10 +61,47 @@
   function updateMeta() {
     var box = document.getElementById("access-meta");
     if (!box) return;
+    var n = metaInfo && metaInfo.n_stations != null ? " · " + metaInfo.n_stations + " stations" : "";
+    if (view === "primal15") {
+      box.textContent = "4.0 km/h · stations within 15 min (primal)" + n;
+      return;
+    }
     var sp = speed === "36" ? "3.6" : speed === "45" ? "4.5" : "4.0";
     var extra = useAll ? " · rail + boats" : " · urban rail";
-    var n = metaInfo && metaInfo.n_stations != null ? " · " + metaInfo.n_stations + " stations" : "";
     box.textContent = sp + " km/h" + extra + n;
+  }
+
+  function updateLegend() {
+    var dual = document.querySelector('[data-legend="dual"]');
+    var primal = document.querySelector('[data-legend="primal"]');
+    if (dual) dual.hidden = view === "primal15";
+    if (primal) primal.hidden = view !== "primal15";
+  }
+
+  function setPrimalMode(on) {
+    document.querySelectorAll('input[name="access-speed"]').forEach(function (el) {
+      el.disabled = on;
+    });
+    var panel = document.querySelector(".access-panel");
+    if (panel) panel.classList.toggle("is-primal", on);
+  }
+
+  function primalStyle(feature) {
+    var k = (feature.properties && feature.properties.class) || "0";
+    var colors = {
+      "0": "#d4564c",
+      "1": "#dce8f5",
+      "2": "#8bb4d9",
+      "3": "#3d7eb8",
+      "4+": "#0b3d6e"
+    };
+    var c = colors[k] || "#d4564c";
+    return {
+      color: c,
+      fillColor: c,
+      fillOpacity: k === "0" ? 0.45 : 0.55,
+      weight: 0
+    };
   }
 
   function classStyle(feature) {
@@ -93,11 +131,54 @@
   }
 
   function showClasses(data) {
+    if (primalLayer && map.hasLayer(primalLayer)) map.removeLayer(primalLayer);
     if (classesLayer) map.removeLayer(classesLayer);
     classesLayer = L.geoJSON(data, { style: classStyle, interactive: false }).addTo(map);
   }
 
+  function showPrimal(data) {
+    if (classesLayer && map.hasLayer(classesLayer)) map.removeLayer(classesLayer);
+    if (primalLayer) map.removeLayer(primalLayer);
+    primalLayer = L.geoJSON(data, { style: primalStyle, interactive: false }).addTo(map);
+    if (railLayer && map.hasLayer(railLayer)) railLayer.bringToFront();
+    if (stationsLayer && map.hasLayer(stationsLayer)) stationsLayer.bringToFront();
+    if (feedersLayer && map.hasLayer(feedersLayer)) feedersLayer.bringToFront();
+  }
+
+  function applyView() {
+    setPrimalMode(view === "primal15");
+    updateLegend();
+    if (view === "primal15") {
+      if (primalData) {
+        showPrimal(primalData);
+        updateMeta();
+        return;
+      }
+      setStatus("Loading primal access…");
+      loadJSON("primal_15.geojson")
+        .then(function (data) {
+          primalData = data;
+          showPrimal(data);
+          setStatus("");
+          updateMeta();
+        })
+        .catch(function () {
+          setStatus("Primal layer is not in this build yet.");
+        });
+      return;
+    }
+    if (primalLayer && map.hasLayer(primalLayer)) map.removeLayer(primalLayer);
+    if (classesLayer) {
+      if (!map.hasLayer(classesLayer)) classesLayer.addTo(map);
+      classesLayer.setStyle(classStyle);
+    } else {
+      switchLayer();
+    }
+    updateMeta();
+  }
+
   function switchLayer() {
+    if (view === "primal15") return;
     var name = fileFor();
     if (classLayers[name]) {
       showClasses(classLayers[name]);
@@ -423,7 +504,7 @@
   document.querySelectorAll('input[name="access-view"]').forEach(function (input) {
     input.addEventListener("change", function () {
       view = input.value;
-      if (classesLayer) classesLayer.setStyle(classStyle);
+      applyView();
     });
   });
   document.querySelectorAll('input[name="access-speed"]').forEach(function (input) {

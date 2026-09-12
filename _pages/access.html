@@ -31,6 +31,7 @@ map: true
         <label><input type="radio" name="access-view" value="combined" checked> 5 / 10 / 15 min</label>
         <label><input type="radio" name="access-view" value="gaps10"> Gaps beyond 10 min</label>
         <label><input type="radio" name="access-view" value="gaps15"> Gaps beyond 15 min</label>
+        <label><input type="radio" name="access-view" value="primal15"> Stations in 15 min</label>
       </fieldset>
       <fieldset>
         <legend>Access</legend>
@@ -48,11 +49,18 @@ map: true
       <p class="access-locate-row">
         <button type="button" class="btn" id="access-locate">Use my location</button>
       </p>
-      <p class="access-legend">
+      <p class="access-legend" data-legend="dual">
         <span><i class="swatch swatch-w"></i> &lt; 5 min</span>
         <span><i class="swatch swatch-g"></i> 5–10 min</span>
         <span><i class="swatch swatch-o"></i> 10–15 min</span>
         <span><i class="swatch swatch-r"></i> &gt; 15 min</span>
+      </p>
+      <p class="access-legend" data-legend="primal" hidden>
+        <span><i class="swatch swatch-r"></i> 0 stations</span>
+        <span><i class="swatch swatch-p1"></i> 1</span>
+        <span><i class="swatch swatch-p2"></i> 2</span>
+        <span><i class="swatch swatch-p3"></i> 3</span>
+        <span><i class="swatch swatch-p4"></i> 4 or more</span>
       </p>
       <p class="access-meta" id="access-meta">4.0 km/h · urban rail</p>
       <p><a class="btn" href="{{ '/access-data/access-16x9.png' | relative_url }}" download>Download 16:9 PNG</a></p>
@@ -65,6 +73,7 @@ map: true
       <li><strong>Origins</strong> Station exits (OSM subway entrances), not the station centroid. If no exit is mapped, the station node is used.</li>
       <li><strong>Network</strong> OpenStreetMap walk graph. Default speed 4.0 km/h (67 m/min) — a typical walk in Bangkok heat, not the 5 km/h realtor figure. Slow 3.6 km/h and brisk 4.5 km/h are precomputed. At 4.0 km/h, 5 minutes is 333 m on the network; 10 minutes is 667 m; 15 minutes is 1 km.</li>
       <li><strong>Unions</strong> Isochrone per exit, unioned by station, then across all stations. White is under 5 minutes; gold is 5–10; orange is 10–15; red is the study area beyond 15.</li>
+      <li><strong>Primal vs dual</strong> Cui and Levinson (2020): primal counts opportunities inside a cost threshold; dual is the cost to reach a given number of them. The default map is dual access to one station — minutes to the nearest. <em>Stations in 15 min</em> counts how many urban-rail stations sit inside a 15-minute walk at 4.0 km/h. Stations are the opportunities, not jobs. Speed does not apply to that layer. <a href="{{ site.baseurl }}{% post_url 2026-09-12-primal-dual-access %}">Primal and dual walk access</a>.</li>
       <li><strong>Study area</strong> All 50 Bangkok districts, plus districts in Nonthaburi, Samut Prakan, and Pathum Thani that contain a selected station.</li>
       <li><strong>Lines</strong> Default is urban rail: BTS Sukhumvit, Silom, and Gold; MRT Blue, Purple, Yellow, and Pink; Airport Rail Link; SRT Dark Red and Light Red. Optional toggle adds Chao Phraya and canal boat piers. Not conventional SRT or unopened Orange.</li>
     </ul>

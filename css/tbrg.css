@@ -738,6 +738,13 @@ main:has(.embed-page) { padding-top: 0; }
 .swatch-g { background: #f3c07a; }
 .swatch-o { background: #e07a3d; }
 .swatch-r { background: #d4564c; }
+.swatch-p1 { background: #dce8f5; }
+.swatch-p2 { background: #8bb4d9; }
+.swatch-p3 { background: #3d7eb8; }
+.swatch-p4 { background: #0b3d6e; }
+.access-panel.is-primal label:has(input[name="access-speed"]:disabled) {
+  opacity: 0.45;
+}
 .access-meta { font-size: 0.78rem; color: var(--muted); margin: 0 0 0.8rem; }
 .access-panel .btn { font-size: 0.68rem; padding: 0.5rem 0.7rem; }
 .access-notes { padding: 2.4rem 0 1rem; max-width: 820px; }
