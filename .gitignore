@@ -10,3 +10,8 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+
+# SvelteKit rewrite (web/)
+web/node_modules/
+web/build/
+web/.svelte-kit/
