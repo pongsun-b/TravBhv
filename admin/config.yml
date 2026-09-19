@@ -43,6 +43,21 @@ collections:
               - { label: Name, name: name, widget: string }
               - { label: Role, name: info, widget: string, required: false }
               - { label: Email, name: email, widget: string, required: false }
+              - { label: Photo, name: photo, widget: image, required: false, media_folder: images/teampic, public_folder: "", choose_url: false }
+              - { label: Research topic, name: research, widget: text, required: false }
+      - name: alumni
+        label: Alumni
+        file: _data/alumni.yml
+        fields:
+          - name: items
+            label: Alumni
+            widget: list
+            summary: "{{fields.name}} ({{fields.year}})"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Graduated year, name: year, widget: number, value_type: int, required: false }
+              - { label: Research topic, name: research, widget: text, required: false }
+              - { label: Thesis report URL, name: thesis, widget: string, required: false }
       - name: publications
         label: Publications
         file: _data/publist.yml

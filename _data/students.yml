@@ -1,3 +1,35 @@
 # Students. Prefer the /admin editor.
-# Empty until real names are added. Placeholder xxxxx emails stay hidden.
-items: []
+# Placeholder xxxxx emails and last-name "X" entries stay hidden.
+items:
+  - name: Chenwit Chanthimakorn
+    email: thew5211@gmail.com
+    photo: chenwit.jpg
+    research: Estimation of Economic Commodity Supply Chain in Thailand Using Global Positioning System Data
+  - name: Inthanon Chatchaipolrat
+    email: inthanon123fuji@gmail.com
+    photo: inthanon.jpg
+    research: Development of Temporal Travel Demand Model in Nakhon Ratchasima Municipality Using Machine Learning
+  - name: Jirasin Chaiyo
+    email: jirasinchaiyo08@gmail.com
+    photo: jirasin.jpg
+    research: Integrated Mobile Data Analytics for Multimodal OD Matrix Estimation in Thailand
+  - name: Myat Mon Win
+    email: myatmonwin44@gmail.com
+    photo: myatmon.jpg
+    research: TOD-Based Typology of MRT Blue Line Station Areas in Bangkok
+  - name: Nanda Kyaw Win
+    email: nandakyawwin2012@gmail.com
+    photo: nanda.jpg
+    research: An exposure–consequence assessment of public transport network vulnerability under pluvial flooding in the Bangkok Metropolitan Region
+  - name: Punnawit Numsangwanich
+    email: punnawit.num@gmail.com
+    photo: punnawit.jpg
+    research: Evaluating the Role of Built Environment and Pedestrian Path Quality in Public Transit Access
+  - name: Tinnaphop Wongwattaporn
+    email: t.wongwattaporn@gmail.com
+    photo: tinnaphop.jpg
+    research: Non-Survey Based Disaggregation of Transportation Sectors for Multi-Regional Economic Analysis
+  - name: Yossawat Raksayos
+    email: yossawat98@gmail.com
+    photo: yossawat.jpg
+    research: Spatiotemporal Service Quality Assessment of Category 1 Public Buses in Bangkok Using Historical GPS Trajectory Data

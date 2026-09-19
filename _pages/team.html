@@ -74,9 +74,20 @@ permalink: /team/
 {% include person_flags.html %}
 {% unless is_placeholder %}
 <article class="person-card">
+{% if member.photo %}
+{% if member.photo contains "/" %}
+{% assign photo_src = member.photo %}
+{% else %}
+{% assign photo_src = "/images/teampic/" | append: member.photo %}
+{% endif %}
+<img class="person-photo" src="{{ photo_src | relative_url }}" alt="{{ member.name }}">
+{% else %}
+<div class="person-fallback" aria-hidden="true">{{ member.name | slice: 0 }}</div>
+{% endif %}
 <div>
 <h3>{{ member.name }}</h3>
 {% if member.info %}<p class="person-role">{{ member.info }}</p>{% endif %}
+{% if member.research %}<p class="person-meta">Research: {{ member.research }}</p>{% endif %}
 {% if member.email %}<p class="person-meta"><a href="mailto:{{ member.email }}">{{ member.email }}</a></p>{% endif %}
 </div>
 </article>
@@ -85,4 +96,30 @@ permalink: /team/
 </div>
 {% else %}
 <p class="empty-note">Students are listed here as they join the group.</p>
+{% endif %}
+{% assign alumni = site.data.alumni.items | default: site.data.alumni %}
+{% assign alumni_count = 0 %}
+{% for member in alumni %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+{% assign alumni_count = alumni_count | plus: 1 %}
+{% endunless %}
+{% endfor %}
+{% if alumni_count > 0 %}
+<h2>Alumni</h2>
+<div class="people-strip">
+{% for member in alumni %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+<article class="person-card">
+<div>
+<h3>{{ member.name }}</h3>
+{% if member.year %}<p class="person-role">Graduated {{ member.year }}</p>{% endif %}
+{% if member.research %}<p class="person-meta">{{ member.research }}</p>{% endif %}
+{% if member.thesis %}<p class="person-meta"><a href="{{ member.thesis }}" target="_blank" rel="noopener">Thesis report</a></p>{% endif %}
+</div>
+</article>
+{% endunless %}
+{% endfor %}
+</div>
 {% endif %}

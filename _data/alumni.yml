@@ -1,0 +1,27 @@
+# Alumni. Prefer the /admin editor.
+# thesis links to the final report PDF.
+items:
+  - name: Jomphol Phetcharavut
+    year: 2022
+    research: Development of Modal Choice Model from Indirect Travel Survey Using Mobile Data
+    thesis: https://www.dropbox.com/scl/fi/0siiclnwo0ol3p4r3gwoa/FinalReport_JompholPhetcharavut.pdf?rlkey=sk5o19zip7b1d9v99w7b6icyk&dl=0
+  - name: Khundech Puntupo
+    year: 2026
+    research: Provincial Origin–Destination Matrix Estimation from Highway Traffic Counts Using a Neural Network Route Choice Model
+    thesis: https://www.dropbox.com/scl/fi/5kc8qyxjhbyciyuyaq51v/FinalReport_KhundechPuntupo.pdf?rlkey=tbuioy3g95foh5yz7bfuqeoaf&dl=0
+  - name: Nattakarn Surangsrirout
+    year: 2022
+    research: Public Transport Accessibility Index for Bangkok and Its Application
+    thesis: https://www.dropbox.com/scl/fi/4bjjr95day3czsdechf8n/FinalReport_NattakarnSurangsrirout.pdf?rlkey=kx5cs75a7wnc76nqfgwudz930&dl=0
+  - name: Saharath Nimmansophon
+    year: 2023
+    research: Influence of Values and Interventions for Encouraging the Use of Public Transport on the Travel Behavioral Shift among University Employees
+    thesis: https://www.dropbox.com/scl/fi/lq7rqn3k6yd5kl298l4xa/FinalReport_SaharathNimmansophon.pdf?rlkey=xg248fa4sf2tle9mmm0cnpbn9&dl=0
+  - name: Sandar Win
+    year: 2020
+    research: Analysis of Demand on Shared Mobility Packages in University Campus
+    thesis: https://www.dropbox.com/scl/fi/9fu864rjsmkl9j41s8zdy/FinalReport_SandarWin.pdf?rlkey=6ucnuak4c1jurkcvixpfi9pon&dl=0
+  - name: Weerachai Sotananan
+    year: 2020
+    research: "Modeling Vehicle-Sharing Choice Behavior: A Case Study of Motorcycle Taxi Users in Bangkok"
+    thesis: https://www.dropbox.com/scl/fi/93wu0lm82agp727snm1ny/FinalReport_WeerachaiSotananan.pdf?rlkey=6dw0zfmx2v231x7r41jsu275l&dl=0

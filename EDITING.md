@@ -10,7 +10,7 @@ Someone with access to the GitHub repository (`pongsun-b/TravBhv`) must invite y
 
 1. Open [the editor](https://pongsun-b.github.io/TravBhv/admin/).
 2. Click **Login with GitHub** and approve access.
-3. Choose a section (Faculty, Students, Publications, News, Extra pages, or Notes).
+3. Choose a section (Faculty, Students, Alumni, Publications, News, Extra pages, or Notes).
 4. Change the fields (or click **Add** for a new person, paper, news item, extra page, or note).
 5. Click **Save** / **Publish**.
 6. Wait one or two minutes, then refresh the public site: https://pongsun-b.github.io/TravBhv
@@ -20,7 +20,8 @@ Someone with access to the GitHub repository (`pongsun-b/TravBhv`) must invite y
 | Section | Use it for |
 |---|---|
 | Faculty | Names, roles, emails, photos, short bios |
-| Students | Student names and emails |
+| Students | Student names, emails, photos, research topics |
+| Alumni | Graduated members: name, year, research topic, thesis report link |
 | Publications | Paper title, authors, short description, DOI/link |
 | News | Date + one headline. Optional Note slug (e.g. `walk-access-map`) to pick which Note it opens; otherwise a Note on the same calendar date is used. |
 | Extra pages | Other pages next to the main menu: a path on this site (`/foo/`) or a dashboard URL (`https://…`) |
@@ -56,6 +57,7 @@ You must be logged into GitHub. Click a link, then the pencil icon, then **Commi
 - [Publications](https://github.com/pongsun-b/TravBhv/edit/main/_data/publist.yml)
 - [Faculty](https://github.com/pongsun-b/TravBhv/edit/main/_data/team_members.yml)
 - [Students](https://github.com/pongsun-b/TravBhv/edit/main/_data/students.yml)
+- [Alumni](https://github.com/pongsun-b/TravBhv/edit/main/_data/alumni.yml)
 - [Extra pages](https://github.com/pongsun-b/TravBhv/edit/main/_data/extras.yml)
 - [Notes](https://github.com/pongsun-b/TravBhv/tree/main/_posts)
 
