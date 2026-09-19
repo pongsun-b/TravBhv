@@ -56,3 +56,8 @@ export function getPosts(): Post[] {
 export function getPost(slug: string): Post | undefined {
 	return loadAll().find((p) => p.slug === slug);
 }
+
+/** Jekyll default post URL (date pattern), e.g. `/2026/09/08/walk-access-map.html`. */
+export function getPostPath(post: Post): string {
+	return `/${post.date.replaceAll('-', '/')}/${post.slug}.html`;
+}

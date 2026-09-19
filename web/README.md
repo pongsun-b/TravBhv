@@ -19,8 +19,12 @@ npm run check      # svelte-check (types)
 ## Configuration
 
 - `svelte.config.js`: `@sveltejs/adapter-static` with `fallback: '404.html'`,
-  `paths.base = '/TravBhv'` (must stay in sync with `baseurl` in the
-  repo-root `_config.yml`).
+  `paths.base = '/TravBhv'` + `paths.relative = false` (absolute
+  `/TravBhv/...` URLs, matching the Jekyll output byte-for-byte; must stay in
+  sync with `baseurl` in the repo-root `_config.yml`), and
+  `prerender.handleHttpError` set to warn (not fail) on 404s while linked
+  routes like `/access/` are still unported — tighten this back to `'error'`
+  once all routes exist.
 - `src/routes/+layout.ts`: `prerender = true` (all routes prerendered at
   build time) and `trailingSlash = 'always'` so emitted URLs keep the
   Jekyll-style trailing slash (`/team/` → `team/index.html`).
@@ -54,9 +58,29 @@ the repo root if they change.
 ## Done so far
 
 - Scaffold (minimal template, TypeScript, no add-ons) + static adapter.
-- Content pipeline: `people.ts`, `posts.ts`.
-- `/team/` proof page (faculty / students / alumni, placeholder rule applied).
-- `/` stub home page.
+- Content pipeline: `people.ts`, `posts.ts`, `site.ts` (Jekyll `_config.yml` +
+  `_data/nav.yml`/`_data/extras.yml`), `news.ts` (incl. `news_link.html`
+  linked-post resolution and news-date → ISO parsing).
+- Design port: `css/tbrg.css` copied verbatim to `src/lib/styles/tbrg.css`
+  (`css/main.scss` is an empty stub upstream — no Sass needed) and imported
+  globally in `src/routes/+layout.svelte`. **It is a copy** — re-sync it if
+  the repo-root CSS changes before cutover.
+- Chrome: `Header.svelte` / `NavLink.svelte` / `Footer.svelte` (ports of
+  `_includes/header|nav-link|footer.html`, incl. the mobile nav-toggle
+  script behavior), wired in `src/routes/+layout.svelte` (=
+  `_layouts/default.html`). Nav is data-driven from nav.yml + extras.yml.
+- `/` home page fully ported (hero, access feature, pillars, people strip,
+  news) — structurally identical to the live page.
+- `/team/` page fully ported (`faculty-block`/`person-row` for faculty,
+  `people-strip`/`person-card` for students, `person-card no-photo` for
+  alumni) — `<main>` is byte-identical to the live page after whitespace
+  normalization.
+- SEO basics: page titles follow the Jekyll pattern
+  (`Home: {title} | {tagline}`, other pages `{title} | {site title}`),
+  meta description, favicon, Google Fonts in `app.html`.
+- `paths.relative: false` in `svelte.config.js`, so links render as absolute
+  `/TravBhv/...` URLs exactly like the live site (the adapter-static default
+  would emit `./` / `../` relative URLs).
 
 ## Remaining migration checklist
 
@@ -65,19 +89,20 @@ Routes to port from `_pages/` (keep the same URLs):
 - `/access/` — Leaflet map; logic in repo-root `js/access-map.js`,
   data in `access-data/`. Dynamic-import Leaflet inside `onMount`
   (it's client-only). Preserve the scroll-zoom-on-click behavior and the
-  `prefers-reduced-motion` handling.
+  `prefers-reduced-motion` handling. The access-map CSS classes are already
+  in the ported `tbrg.css`; also link `leaflet.css` from
+  `web/static/leaflet/` (the Jekyll `head.html` does this when
+  `page.map` is set).
 - `/research/`, `/publications/`, `/notes/` (+ individual post pages from
-  `_posts/` — see the Liquid-tag note above), `/apps/`, `/data/`,
-  `/allnews/`, `/openings/`, `/aboutwebsite/`, and a proper 404 page.
-- Home: replace the stub with the real Jekyll home page (`_pages/home.html`
-  + `_layouts/homelay.html` + `_includes/home-people.html`).
-
-Layouts & components:
-
-- Port `_layouts/` (default, homelay, gridlay, textlay, embed) to Svelte
-  layouts; `_includes/header.html`, `footer.html`, `nav-link.html` to
-  components (nav structure comes from `_data/nav.yml`).
-- Port styles from `css/main.scss` and `css/tbrg.css`.
+  `_posts/` — see the Liquid-tag note above; news headlines and post indexes
+  already link to Jekyll-style `/YYYY/MM/DD/slug.html` URLs via
+  `getPostPath()`, so post pages must live at those URLs), `/apps/`,
+  `/data/`, `/allnews/`, `/openings/`, `/aboutwebsite/`, and a proper 404
+  page (`.not-found` styles are already in the CSS).
+- The `homelay` and `gridlay` wrappers are inlined in the two existing
+  routes (`<div class="home wrap">`, `<article class="page wrap wide">`);
+  still to port as reusable layouts: `textlay` (`<article class="page
+  wrap">`) and `embed` (iframe dashboards, `.embed-*` styles are in the CSS).
 
 Decap CMS:
 

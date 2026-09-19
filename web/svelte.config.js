@@ -15,10 +15,16 @@ const config = {
 		}),
 		paths: {
 			// Must match `baseurl` in the Jekyll _config.yml at the repo root.
-			base: '/TravBhv'
+			base: '/TravBhv',
+			// Absolute URLs (href="/TravBhv/...") like the Jekyll site emits,
+			// instead of adapter-static's default relative base ("./", "../").
+			relative: false
 		},
 		prerender: {
-			entries: ['*']
+			entries: ['*'],
+			// Routes not yet ported from Jekyll (e.g. /access/, /news/) are still
+			// linked from ported pages; warn instead of failing the build.
+			handleHttpError: ({ status }) => (status === 404 ? 'warn' : 'error')
 		}
 	}
 };

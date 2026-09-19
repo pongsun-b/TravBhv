@@ -1,11 +1,15 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import '$lib/styles/tbrg.css';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
-	let { children } = $props();
+	// Port of `_layouts/default.html`: skip link, header, main, footer.
+	let { data, children } = $props();
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
-
-{@render children()}
+<a class="skip-link" href="#main">Skip to content</a>
+<Header items={data.headerNav} />
+<main id="main">
+	{@render children()}
+</main>
+<Footer site={data.site} links={data.footerLinks} showApps={data.showApps} />
