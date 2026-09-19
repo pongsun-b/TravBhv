@@ -111,7 +111,7 @@ permalink: /team/
 {% for member in alumni %}
 {% include person_flags.html %}
 {% unless is_placeholder %}
-<article class="person-card">
+<article class="person-card no-photo">
 <div>
 <h3>{{ member.name }}</h3>
 {% if member.year %}<p class="person-role">Graduated {{ member.year }}</p>{% endif %}

@@ -395,6 +395,7 @@ main { flex: 1 0 auto; padding: 2.5rem 0 5rem; }
 }
 .person-card > div,
 .person-row > div { min-width: 0; }
+.person-card.no-photo { grid-template-columns: 1fr; }
 .person-photo {
   width: 88px;
   height: 110px;
