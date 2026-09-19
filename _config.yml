@@ -34,6 +34,9 @@ include:
   - .htaccess
   - _pages
 
+exclude:
+  - web
+
 markdown: kramdown
 highlighter: rouge
 lsi: false
