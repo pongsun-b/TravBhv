@@ -1,0 +1,80 @@
+---
+title: "Projects"
+layout: gridlay
+excerpt: "Current research and completed theses of the Travel Behavior Research Group."
+permalink: /projects/
+---
+<p class="page-kicker">Projects</p>
+<h1>What the group is working on</h1>
+<p>TBRG work runs from travel behavior surveys and mobile data analysis to planning tools for Bangkok and Thailand. Thesis topics below are listed with their researchers; current topics are from the group's active students.</p>
+
+<h2>Featured</h2>
+<figure class="access-feature">
+<a href="{{ '/access/' | relative_url }}">
+<img src="{{ '/access-data/access-16x9.jpg' | relative_url }}" width="1920" height="1080" alt="Map of Bangkok walk access to urban rail at a typical 4.0 km/h: white under 5 minutes, gold 5 to 10, orange 10 to 15, red beyond 15.">
+</a>
+<figcaption><strong>Walk access to urban rail.</strong> Network isochrones from station exits on the OpenStreetMap walk graph — 5, 10 and 15 minutes at a typical 4.0 km/h, with river and canal boat piers as an extra layer. <a href="{{ '/access/' | relative_url }}">Open the map</a>.</figcaption>
+</figure>
+<p><strong>Public Transport Accessibility Index (PTAI).</strong> A related lab project measuring demand-weighted generalized travel cost across 88 inner-Bangkok subdistricts. Enquiries: <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+
+{% assign students = site.data.students.items | default: site.data.students %}
+{% assign student_count = 0 %}
+{% for member in students %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+{% assign student_count = student_count | plus: 1 %}
+{% endunless %}
+{% endfor %}
+{% if student_count > 0 %}
+<h2>Current research</h2>
+<div class="people-strip">
+{% for member in students %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+<article class="person-card">
+{% if member.photo %}
+{% if member.photo contains "/" %}
+{% assign photo_src = member.photo %}
+{% else %}
+{% assign photo_src = "/images/teampic/" | append: member.photo %}
+{% endif %}
+<img class="person-photo" src="{{ photo_src | relative_url }}" alt="{{ member.name }}">
+{% else %}
+<div class="person-fallback" aria-hidden="true">{{ member.name | slice: 0 }}</div>
+{% endif %}
+<div>
+<h3><a href="{{ '/team/' | relative_url }}">{{ member.name }}</a></h3>
+{% if member.research %}<p class="person-meta">{{ member.research }}</p>{% endif %}
+</div>
+</article>
+{% endunless %}
+{% endfor %}
+</div>
+{% endif %}
+
+{% assign alumni = site.data.alumni.items | default: site.data.alumni %}
+{% assign alumni_count = 0 %}
+{% for member in alumni %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+{% assign alumni_count = alumni_count | plus: 1 %}
+{% endunless %}
+{% endfor %}
+{% if alumni_count > 0 %}
+<h2>Completed theses</h2>
+<div class="people-strip">
+{% for member in alumni %}
+{% include person_flags.html %}
+{% unless is_placeholder %}
+<article class="person-card no-photo">
+<div>
+<h3>{{ member.name }}</h3>
+{% if member.year %}<p class="person-role">Graduated {{ member.year }}</p>{% endif %}
+{% if member.research %}<p class="person-meta">{{ member.research }}</p>{% endif %}
+{% if member.thesis %}<p class="person-meta"><a href="{{ member.thesis }}" target="_blank" rel="noopener">Thesis report</a></p>{% endif %}
+</div>
+</article>
+{% endunless %}
+{% endfor %}
+</div>
+{% endif %}

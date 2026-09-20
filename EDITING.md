@@ -22,6 +22,7 @@ Someone with access to the GitHub repository (`pongsun-b/TravBhv`) must invite y
 | Faculty | Names, roles, emails, photos, short bios |
 | Students | Student names, emails, photos, research topics |
 | Alumni | Graduated members: name, year, research topic, thesis report link |
+| Projects | Not edited here — the Projects page fills itself from Students + Alumni. Featured projects are maintainer-edited in `_pages/projects.html`. |
 | Publications | Paper title, authors, short description, DOI/link |
 | News | Date + one headline. Optional Note slug (e.g. `walk-access-map`) to pick which Note it opens; otherwise a Note on the same calendar date is used. |
 | Extra pages | Other pages next to the main menu: a path on this site (`/foo/`) or a dashboard URL (`https://…`) |

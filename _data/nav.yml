@@ -10,6 +10,9 @@ items:
   - title: Research
     url: /research/
     footer: true
+  - title: Projects
+    url: /projects/
+    footer: true
   - title: People
     url: /team/
   - title: Papers
