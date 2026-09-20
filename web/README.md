@@ -75,6 +75,11 @@ the repo root if they change.
   `people-strip`/`person-card` for students, `person-card no-photo` for
   alumni) — `<main>` is byte-identical to the live page after whitespace
   normalization.
+- `/projects/` page fully ported (Featured access map + PTAI paragraph,
+  Current research student cards linking to `/team/`, Completed theses
+  alumni cards) — `<main>` byte-identical to the Jekyll build after
+  whitespace normalization. Nav/footer picked up the new nav.yml entry
+  automatically.
 - SEO basics: page titles follow the Jekyll pattern
   (`Home: {title} | {tagline}`, other pages `{title} | {site title}`),
   meta description, favicon, Google Fonts in `app.html`.
