@@ -25,6 +25,12 @@ const ROUTES = [
   '/access/',
   '/simulator/',
   '/news/',
+  '/notes/',
+  '/notes/access-compared-with-ptai/',
+  '/notes/primal-and-dual-walk-access/',
+  '/notes/walk-access-to-urban-rail/',
+  '/notes/the-group-is-underway/',
+  '/notes/highway-safety-collaboration/',
   '/contact/',
   '/brand/'
 ];

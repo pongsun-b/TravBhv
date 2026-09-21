@@ -81,7 +81,8 @@ automatically. Nothing else in the site needs editing: the pages themselves use 
 | --- | --- |
 | `site/` | **The published site.** SvelteKit source, brand assets, data files, build tooling |
 | `site/src/lib/tokens.css` | Single source of truth for colour, type, spacing, radius, motion |
-| `site/src/lib/data/` | All site copy: research, people, publications, projects, datasets, news |
+| `site/src/lib/data/` | All site copy: research, people, publications, projects, datasets, news, notes |
+| `site/src/lib/data/notes.js` | The long-form notes in full, with their own pages under `/notes/` |
 | `site/static/geo/` | Walk-access GeoJSON layers for the interactive map |
 | `site/brand/` | Exported identity pack: SVG, PNG, favicon, social cards |
 | `site/docs/brand-guidelines.md` | The written identity rules |
@@ -103,6 +104,7 @@ Content lives in one file per section, so nothing has to be edited inside page m
 | Featured projects and thesis lists | `site/src/lib/data/projects.js` |
 | Datasets, citation, data policy | `site/src/lib/data/datasets.js` |
 | News and research notes | `site/src/lib/data/news.js` |
+| Long-form notes | `site/src/lib/data/notes.js`, one entry per note (`body` is authored HTML), then `npm run build` |
 | One page's layout | that page's `site/src/routes/<page>/+page.svelte` |
 
 Full instructions, including how to run and verify locally, are in

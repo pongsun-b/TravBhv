@@ -1,6 +1,6 @@
 {
   "base": "http://localhost:4180",
-  "generatedAt": "2026-09-21T15:17:27.240Z",
+  "generatedAt": "2026-09-21T16:46:08.648Z",
   "routes": [
     "/",
     "/about/",
@@ -12,6 +12,12 @@
     "/access/",
     "/simulator/",
     "/news/",
+    "/notes/",
+    "/notes/access-compared-with-ptai/",
+    "/notes/primal-and-dual-walk-access/",
+    "/notes/walk-access-to-urban-rail/",
+    "/notes/the-group-is-underway/",
+    "/notes/highway-safety-collaboration/",
     "/contact/",
     "/brand/"
   ],
@@ -97,6 +103,54 @@
       "incomplete": 0
     },
     {
+      "route": "/notes/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 24,
+      "incomplete": 0
+    },
+    {
+      "route": "/notes/access-compared-with-ptai/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 27,
+      "incomplete": 0
+    },
+    {
+      "route": "/notes/primal-and-dual-walk-access/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 25,
+      "incomplete": 0
+    },
+    {
+      "route": "/notes/walk-access-to-urban-rail/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 25,
+      "incomplete": 0
+    },
+    {
+      "route": "/notes/the-group-is-underway/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 24,
+      "incomplete": 0
+    },
+    {
+      "route": "/notes/highway-safety-collaboration/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 24,
+      "incomplete": 0
+    },
+    {
       "route": "/contact/",
       "status": 200,
       "violations": [],
@@ -152,6 +206,30 @@
     },
     {
       "route": "/news/",
+      "errors": []
+    },
+    {
+      "route": "/notes/",
+      "errors": []
+    },
+    {
+      "route": "/notes/access-compared-with-ptai/",
+      "errors": []
+    },
+    {
+      "route": "/notes/primal-and-dual-walk-access/",
+      "errors": []
+    },
+    {
+      "route": "/notes/walk-access-to-urban-rail/",
+      "errors": []
+    },
+    {
+      "route": "/notes/the-group-is-underway/",
+      "errors": []
+    },
+    {
+      "route": "/notes/highway-safety-collaboration/",
       "errors": []
     },
     {
@@ -247,6 +325,54 @@
     {
       "width": "mobile",
       "px": 390,
+      "route": "/notes/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/notes/access-compared-with-ptai/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/notes/primal-and-dual-walk-access/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/notes/walk-access-to-urban-rail/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/notes/the-group-is-underway/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/notes/highway-safety-collaboration/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
       "route": "/contact/",
       "overflow": 0,
       "widest": 0,
@@ -343,6 +469,54 @@
     {
       "width": "tablet",
       "px": 834,
+      "route": "/notes/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/notes/access-compared-with-ptai/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/notes/primal-and-dual-walk-access/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/notes/walk-access-to-urban-rail/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/notes/the-group-is-underway/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/notes/highway-safety-collaboration/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
       "route": "/contact/",
       "overflow": 0,
       "widest": 0,
@@ -439,6 +613,54 @@
     {
       "width": "desktop",
       "px": 1440,
+      "route": "/notes/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/notes/access-compared-with-ptai/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/notes/primal-and-dual-walk-access/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/notes/walk-access-to-urban-rail/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/notes/the-group-is-underway/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/notes/highway-safety-collaboration/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
       "route": "/contact/",
       "overflow": 0,
       "widest": 0,
@@ -516,6 +738,26 @@
     },
     {
       "url": "/brand/",
+      "status": 200
+    },
+    {
+      "url": "/notes/primal-and-dual-walk-access/",
+      "status": 200
+    },
+    {
+      "url": "/notes/access-compared-with-ptai/",
+      "status": 200
+    },
+    {
+      "url": "/notes/walk-access-to-urban-rail/",
+      "status": 200
+    },
+    {
+      "url": "/notes/highway-safety-collaboration/",
+      "status": 200
+    },
+    {
+      "url": "/notes/the-group-is-underway/",
       "status": 200
     },
     {
@@ -649,6 +891,14 @@
     {
       "url": "/geo/meta.json",
       "status": 200
+    },
+    {
+      "url": "/notes/",
+      "status": 200
+    },
+    {
+      "url": "https://doi.org/10.1111/gean.12220",
+      "external": true
     }
   ],
   "interactions": {
@@ -675,116 +925,164 @@
       "summaryAlertShown": true,
       "badEmailBlocked": true,
       "successVisible": true,
-      "reference": "1dc7b24c-5dbe-4acb-ac69-7ba78a66cdc7"
+      "reference": "a3c4b4e8-11bc-48a1-826e-651d3706d3c9"
     },
     "failures": []
   },
   "performance": [
     {
       "route": "/",
-      "domContentLoadedMs": 18,
-      "loadMs": 44,
-      "transferKB": 563,
-      "requests": 43,
-      "measuredLoadMs": 48
+      "domContentLoadedMs": 36,
+      "loadMs": 38,
+      "transferKB": 573,
+      "requests": 46,
+      "measuredLoadMs": 41
     },
     {
       "route": "/about/",
-      "domContentLoadedMs": 36,
-      "loadMs": 39,
-      "transferKB": 287,
-      "requests": 36,
-      "measuredLoadMs": 42
+      "domContentLoadedMs": 17,
+      "loadMs": 33,
+      "transferKB": 290,
+      "requests": 38,
+      "measuredLoadMs": 35
     },
     {
       "route": "/research/",
-      "domContentLoadedMs": 36,
-      "loadMs": 43,
-      "transferKB": 373,
-      "requests": 38,
-      "measuredLoadMs": 47
+      "domContentLoadedMs": 12,
+      "loadMs": 27,
+      "transferKB": 383,
+      "requests": 41,
+      "measuredLoadMs": 29
     },
     {
       "route": "/projects/",
-      "domContentLoadedMs": 35,
-      "loadMs": 38,
-      "transferKB": 510,
-      "requests": 38,
-      "measuredLoadMs": 40
+      "domContentLoadedMs": 29,
+      "loadMs": 32,
+      "transferKB": 513,
+      "requests": 40,
+      "measuredLoadMs": 34
     },
     {
       "route": "/publications/",
-      "domContentLoadedMs": 15,
-      "loadMs": 41,
-      "transferKB": 288,
-      "requests": 35,
-      "measuredLoadMs": 44
+      "domContentLoadedMs": 29,
+      "loadMs": 31,
+      "transferKB": 291,
+      "requests": 37,
+      "measuredLoadMs": 34
     },
     {
       "route": "/people/",
-      "domContentLoadedMs": 49,
-      "loadMs": 53,
-      "transferKB": 619,
-      "requests": 45,
-      "measuredLoadMs": 54
+      "domContentLoadedMs": 42,
+      "loadMs": 45,
+      "transferKB": 623,
+      "requests": 47,
+      "measuredLoadMs": 48
     },
     {
       "route": "/data/",
-      "domContentLoadedMs": 35,
-      "loadMs": 38,
-      "transferKB": 507,
-      "requests": 37,
-      "measuredLoadMs": 39
+      "domContentLoadedMs": 17,
+      "loadMs": 34,
+      "transferKB": 510,
+      "requests": 39,
+      "measuredLoadMs": 36
     },
     {
       "route": "/access/",
-      "domContentLoadedMs": 39,
-      "loadMs": 42,
-      "transferKB": 1012,
-      "requests": 43,
-      "measuredLoadMs": 44
+      "domContentLoadedMs": 33,
+      "loadMs": 35,
+      "transferKB": 1015,
+      "requests": 45,
+      "measuredLoadMs": 37
     },
     {
       "route": "/simulator/",
-      "domContentLoadedMs": 48,
-      "loadMs": 51,
-      "transferKB": 296,
-      "requests": 36,
-      "measuredLoadMs": 53
+      "domContentLoadedMs": 40,
+      "loadMs": 43,
+      "transferKB": 299,
+      "requests": 38,
+      "measuredLoadMs": 44
     },
     {
       "route": "/news/",
-      "domContentLoadedMs": 33,
-      "loadMs": 39,
-      "transferKB": 262,
+      "domContentLoadedMs": 27,
+      "loadMs": 29,
+      "transferKB": 272,
+      "requests": 38,
+      "measuredLoadMs": 30
+    },
+    {
+      "route": "/notes/",
+      "domContentLoadedMs": 27,
+      "loadMs": 29,
+      "transferKB": 271,
+      "requests": 37,
+      "measuredLoadMs": 31
+    },
+    {
+      "route": "/notes/access-compared-with-ptai/",
+      "domContentLoadedMs": 30,
+      "loadMs": 32,
+      "transferKB": 285,
+      "requests": 36,
+      "measuredLoadMs": 35
+    },
+    {
+      "route": "/notes/primal-and-dual-walk-access/",
+      "domContentLoadedMs": 17,
+      "loadMs": 32,
+      "transferKB": 285,
+      "requests": 36,
+      "measuredLoadMs": 34
+    },
+    {
+      "route": "/notes/walk-access-to-urban-rail/",
+      "domContentLoadedMs": 30,
+      "loadMs": 33,
+      "transferKB": 285,
+      "requests": 36,
+      "measuredLoadMs": 34
+    },
+    {
+      "route": "/notes/the-group-is-underway/",
+      "domContentLoadedMs": 27,
+      "loadMs": 29,
+      "transferKB": 268,
       "requests": 35,
-      "measuredLoadMs": 41
+      "measuredLoadMs": 31
+    },
+    {
+      "route": "/notes/highway-safety-collaboration/",
+      "domContentLoadedMs": 26,
+      "loadMs": 29,
+      "transferKB": 268,
+      "requests": 35,
+      "measuredLoadMs": 32
     },
     {
       "route": "/contact/",
-      "domContentLoadedMs": 34,
-      "loadMs": 38,
-      "transferKB": 293,
-      "requests": 34,
-      "measuredLoadMs": 41
+      "domContentLoadedMs": 30,
+      "loadMs": 33,
+      "transferKB": 296,
+      "requests": 36,
+      "measuredLoadMs": 35
     },
     {
       "route": "/brand/",
-      "domContentLoadedMs": 41,
-      "loadMs": 44,
-      "transferKB": 294,
-      "requests": 33,
-      "measuredLoadMs": 47
+      "domContentLoadedMs": 19,
+      "loadMs": 31,
+      "transferKB": 297,
+      "requests": 35,
+      "measuredLoadMs": 33
     }
   ],
   "summary": {
-    "routes": 12,
+    "routes": 18,
     "a11yViolationNodes": 0,
     "a11yRoutesWithViolations": 0,
     "consoleErrors": 0,
     "responsiveOverflow": 0,
     "brokenInternalLinks": 0,
     "interactionFailures": 0,
-    "maxTransferKB": 1012
+    "maxTransferKB": 1015
   }
 }

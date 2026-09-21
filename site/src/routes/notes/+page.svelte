@@ -1,48 +1,31 @@
 <script>
-  import { news, researchNotes } from '$lib/data/news.js';
+  import { notes } from '$lib/data/notes.js';
   import { resolve } from '$app/paths';
   import SectionHead from '$lib/components/SectionHead.svelte';
 </script>
 
 <svelte:head>
-  <title>News · Transportation Behavior Lab</title>
+  <title>Notes · Transportation Behavior Lab</title>
   <meta
     name="description"
-    content="Group news and research notes from the Transportation Behavior Lab, including the walk-access map to urban rail and highway safety collaboration."
+    content="Writing from the lab: walk access to urban rail, primal and dual access, and how PTAI differs from the walk-access map."
   />
 </svelte:head>
 
 <section class="wrap page-head">
-  <p class="meta">Group news</p>
-  <h1>News</h1>
+  <p class="meta">Writing</p>
+  <h1>Notes</h1>
+  <p class="lede">
+    Longer pieces on method and interpretation, carried over from the group's previous site. Written
+    for someone who wants the reasoning, not just the map.
+  </p>
 </section>
 
 <section class="section section--flush">
   <div class="wrap">
+    <SectionHead title="All notes" />
     <ol class="feed">
-      {#each news as item (item.title)}
-        <li>
-          <time datetime={item.date}>{item.display}</time>
-          <div>
-            <h2>
-              {#if item.href}
-                <a href={resolve(item.href)}>{item.title}</a>
-              {:else}
-                {item.title}
-              {/if}
-            </h2>
-          </div>
-        </li>
-      {/each}
-    </ol>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <SectionHead title="Notes" action={{ label: 'All notes', href: '/notes/' }} />
-    <ol class="feed">
-      {#each researchNotes as note (note.slug)}
+      {#each notes as note (note.slug)}
         <li>
           <time datetime={note.date}>{note.display}</time>
           <div>
@@ -58,6 +41,10 @@
 <style>
   .page-head {
     padding-block: clamp(3rem, 6vw, 5rem) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: flex-start;
   }
 
   .feed {
@@ -77,16 +64,17 @@
 
   .feed time {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: var(--fs-meta);
     letter-spacing: 0.06em;
     color: var(--muted);
     padding-top: 0.35rem;
   }
 
   .feed h2 {
-    font-size: 1.3rem;
+    font-size: var(--fs-h3);
     line-height: 1.25;
     max-width: 40ch;
+    margin: 0;
   }
 
   .feed h2 a {
@@ -100,7 +88,7 @@
   }
 
   .feed p {
-    font-size: 0.95rem;
+    font-size: var(--fs-sm);
     color: var(--muted);
     margin: 0.55rem 0 0;
     max-width: 68ch;

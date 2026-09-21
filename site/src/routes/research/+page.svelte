@@ -103,12 +103,12 @@
   <div class="wrap">
     <SectionHead title="Notes" action={{ label: 'All news and notes', href: '/news/' }} />
     <ol class="notes">
-      {#each researchNotes as note (note.title)}
+      {#each researchNotes as note (note.slug)}
         <li>
           <time datetime={note.date}>{note.display}</time>
           <div>
-            <h3>{note.title}</h3>
-            <p>{note.body}</p>
+            <h3><a href={resolve(`/notes/${note.slug}/`)}>{note.title}</a></h3>
+            <p>{note.summary}</p>
           </div>
         </li>
       {/each}
