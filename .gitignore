@@ -15,3 +15,55 @@ __pycache__/
 web/node_modules/
 web/build/
 web/.svelte-kit/
+
+# The published site (site/) builds its own output; never commit it.
+site/node_modules/
+site/build/
+site/.svelte-kit/
+site/data/
+
+# ---------------------------------------------------------------------------
+# AI agent and assistant artefacts. These are local working files: identity,
+# persona, tooling notes and memory written by the assistant that helps
+# maintain this repo. They are never part of the published site and must not
+# be pushed.
+# ---------------------------------------------------------------------------
+AGENTS.md
+SOUL.md
+IDENTITY.md
+USER.md
+TOOLS.md
+HEARTBEAT.md
+BOOTSTRAP.md
+MEMORY.md
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md
+NOTES.local.md
+*.agent.md
+*.agent.md.bak
+
+# AI tool rule and context directories
+.agents/
+.claude/
+.cursor/
+.cursorrules
+.windsurf/
+.clinerules
+.aider*
+.continue/
+.codex/
+.gemini/
+.github/copilot-instructions.md
+prompts/
+
+# Assistant runtime state (session data, attachments, cluster scratch)
+.openclaw/
+.openclaw-attachments/
+.openclaw-tmp/
+.cluster/
+memory/
+
+# Local delivery folder: screenshots and handoff notes produced by the assistant.
+# Working material for the group, not part of the published site.
+DELIVERY/

@@ -1,0 +1,5 @@
+{
+  "display": "<g transform=\"translate(-0.25 0.25)\">\n      <path d=\"M19.39 11.61A7.4 7.4 0 1 1 12.39 4.61\" fill=\"none\" stroke-width=\"2.9\" stroke-linecap=\"butt\" />\n      <circle cx=\"17.23\" cy=\"6.77\" r=\"2.95\" stroke=\"none\" />\n    </g>",
+  "small": "<g transform=\"translate(-0.25 0.25)\">\n      <path d=\"M19.37 12.65A7.4 7.4 0 1 1 11.36 4.63\" fill=\"none\" stroke-width=\"3.6\" stroke-linecap=\"butt\" />\n      <circle cx=\"17.23\" cy=\"6.77\" r=\"3.5\" stroke=\"none\" />\n    </g>",
+  "accent": "#2E6B57"
+}

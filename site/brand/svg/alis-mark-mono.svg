@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="ALIS mark">
+  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="currentColor">
+    <g transform="translate(-0.25 0.25)">
+      <path d="M19.39 11.61A7.4 7.4 0 1 1 12.39 4.61" fill="none" stroke-width="2.9" stroke-linecap="butt" />
+      <circle cx="17.23" cy="6.77" r="2.95" stroke="none" />
+    </g>
+  </g>
+</svg>

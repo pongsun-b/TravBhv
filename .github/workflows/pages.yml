@@ -1,0 +1,87 @@
+name: Deploy site to Pages
+
+# The published site is the ALIS site in site/ (SvelteKit, prerendered to static files).
+# This workflow is the only one that deploys to GitHub Pages. The legacy Jekyll build in
+# .github/workflows/jekyll.yml is kept for reference but is now manual-only, so the two
+# cannot race for the same Pages environment.
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        env:
+          # The verification tooling (scripts/verify.mjs) is run locally; CI only needs to build.
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+
+      - name: Guard - no AI agent or identity files in the repository
+        working-directory: .
+        run: |
+          # The assistant's own working files (identity, persona, tooling notes, memory) are
+          # git-ignored and must never be published. Fail the deploy if one ever becomes tracked,
+          # so this cannot regress silently.
+          offenders=$(git ls-files | grep -Ei '(^|/)(AGENTS|SOUL|IDENTITY|USER|TOOLS|HEARTBEAT|BOOTSTRAP|MEMORY|CLAUDE|GEMINI)\.md$|(^|/)[^/]*\.agent\.md$|^\.agents/|^\.claude/|^\.openclaw|^\.cluster/|^memory/|^prompts/|^\.cursor|^\.windsurf/|^\.clinerules$|^\.aider|^\.continue/|^\.codex/|^\.gemini/' || true)
+          if [ -n "$offenders" ]; then
+            echo "::error::An AI agent/identity file is tracked in this repository and would be published:"
+            echo "$offenders"
+            echo "Remove it from the index with: git rm --cached <path>  (the local file stays on disk)."
+            exit 1
+          fi
+          echo "Guard passed: $(git ls-files | wc -l | tr -d ' ') tracked files, none of them assistant artefacts."
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build static site
+        run: npm run build
+        env:
+          # GitHub Pages is static: it cannot receive POST /api/inquiries. The form validates,
+          # then hands the enquiry to the visitor's email app and says so on the page.
+          VITE_ENQUIRY_MODE: mailto
+          # Project pages live under /<repo>; the fallback 404.html needs it to resolve assets.
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/build
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

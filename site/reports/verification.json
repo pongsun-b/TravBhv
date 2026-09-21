@@ -1,0 +1,790 @@
+{
+  "base": "http://localhost:4180",
+  "generatedAt": "2026-09-21T15:17:27.240Z",
+  "routes": [
+    "/",
+    "/about/",
+    "/research/",
+    "/projects/",
+    "/publications/",
+    "/people/",
+    "/data/",
+    "/access/",
+    "/simulator/",
+    "/news/",
+    "/contact/",
+    "/brand/"
+  ],
+  "a11y": [
+    {
+      "route": "/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 27,
+      "incomplete": 0
+    },
+    {
+      "route": "/about/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 26,
+      "incomplete": 0
+    },
+    {
+      "route": "/research/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 27,
+      "incomplete": 0
+    },
+    {
+      "route": "/projects/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 24,
+      "incomplete": 0
+    },
+    {
+      "route": "/publications/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 28,
+      "incomplete": 0
+    },
+    {
+      "route": "/people/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 27,
+      "incomplete": 0
+    },
+    {
+      "route": "/data/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 28,
+      "incomplete": 0
+    },
+    {
+      "route": "/access/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 29,
+      "incomplete": 1
+    },
+    {
+      "route": "/simulator/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 33,
+      "incomplete": 0
+    },
+    {
+      "route": "/news/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 24,
+      "incomplete": 0
+    },
+    {
+      "route": "/contact/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 32,
+      "incomplete": 0
+    },
+    {
+      "route": "/brand/",
+      "status": 200,
+      "violations": [],
+      "violationCount": 0,
+      "passes": 26,
+      "incomplete": 0
+    }
+  ],
+  "console": [
+    {
+      "route": "/",
+      "errors": []
+    },
+    {
+      "route": "/about/",
+      "errors": []
+    },
+    {
+      "route": "/research/",
+      "errors": []
+    },
+    {
+      "route": "/projects/",
+      "errors": []
+    },
+    {
+      "route": "/publications/",
+      "errors": []
+    },
+    {
+      "route": "/people/",
+      "errors": []
+    },
+    {
+      "route": "/data/",
+      "errors": []
+    },
+    {
+      "route": "/access/",
+      "errors": []
+    },
+    {
+      "route": "/simulator/",
+      "errors": []
+    },
+    {
+      "route": "/news/",
+      "errors": []
+    },
+    {
+      "route": "/contact/",
+      "errors": []
+    },
+    {
+      "route": "/brand/",
+      "errors": []
+    }
+  ],
+  "responsive": [
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/about/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/research/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/projects/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/publications/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/people/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/data/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/access/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/simulator/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/news/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/contact/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "mobile",
+      "px": 390,
+      "route": "/brand/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/about/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/research/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/projects/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/publications/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/people/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/data/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/access/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/simulator/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/news/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/contact/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "tablet",
+      "px": 834,
+      "route": "/brand/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/about/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/research/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/projects/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/publications/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/people/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/data/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/access/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/simulator/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/news/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/contact/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    },
+    {
+      "width": "desktop",
+      "px": 1440,
+      "route": "/brand/",
+      "overflow": 0,
+      "widest": 0,
+      "culprit": ""
+    }
+  ],
+  "links": [
+    {
+      "url": "/",
+      "status": 200
+    },
+    {
+      "url": "/research/",
+      "status": 200
+    },
+    {
+      "url": "/about/",
+      "status": 200
+    },
+    {
+      "url": "/people/",
+      "status": 200
+    },
+    {
+      "url": "/publications/",
+      "status": 200
+    },
+    {
+      "url": "/data/",
+      "status": 200
+    },
+    {
+      "url": "/access/",
+      "status": 200
+    },
+    {
+      "url": "/simulator/",
+      "status": 200
+    },
+    {
+      "url": "/news/",
+      "status": 200
+    },
+    {
+      "url": "/contact/",
+      "status": 200
+    },
+    {
+      "url": "https://civil.eng.chula.ac.th/web/",
+      "external": true
+    },
+    {
+      "url": "https://www.chula.ac.th/",
+      "external": true
+    },
+    {
+      "url": "https://maps.app.goo.gl/Z5wdK469MZw9jFod9",
+      "external": true
+    },
+    {
+      "url": "https://scholar.google.com/citations?hl=en&user=oLV6IeQAAAAJ",
+      "external": true
+    },
+    {
+      "url": "/projects/",
+      "status": 200
+    },
+    {
+      "url": "/brand/",
+      "status": 200
+    },
+    {
+      "url": "https://www.dropbox.com/scl/fi/5kc8qyxjhbyciyuyaq51v/FinalReport_KhundechPuntupo.pdf?rlkey=tbuioy3g95foh5yz7bfuqeoaf&dl=0",
+      "external": true
+    },
+    {
+      "url": "https://www.dropbox.com/scl/fi/lq7rqn3k6yd5kl298l4xa/FinalReport_SaharathNimmansophon.pdf?rlkey=xg248fa4sf2tle9mmm0cnpbn9&dl=0",
+      "external": true
+    },
+    {
+      "url": "https://www.dropbox.com/scl/fi/0siiclnwo0ol3p4r3gwoa/FinalReport_JompholPhetcharavut.pdf?rlkey=sk5o19zip7b1d9v99w7b6icyk&dl=0",
+      "external": true
+    },
+    {
+      "url": "https://www.dropbox.com/scl/fi/4bjjr95day3czsdechf8n/FinalReport_NattakarnSurangsrirout.pdf?rlkey=kx5cs75a7wnc76nqfgwudz930&dl=0",
+      "external": true
+    },
+    {
+      "url": "https://www.dropbox.com/scl/fi/9fu864rjsmkl9j41s8zdy/FinalReport_SandarWin.pdf?rlkey=6ucnuak4c1jurkcvixpfi9pon&dl=0",
+      "external": true
+    },
+    {
+      "url": "https://www.dropbox.com/scl/fi/93wu0lm82agp727snm1ny/FinalReport_WeerachaiSotananan.pdf?rlkey=6dw0zfmx2v231x7r41jsu275l&dl=0",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.1007/s12469-026-00428-y",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.4186/ej.2020.24.2.1",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.1007/978-981-99-3897-1_27",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.32479/ijeep.15987",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.3389/fsufs.2023.1256119",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.3390/su13147651",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.3390/su13168988",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.1080/15487733.2021.1898776",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.1016/j.resconrec.2020.104779",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.1051/e3sconf/202018703008",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.1088/2515-7620/add9ec",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.1080/14786451.2015.1017501",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.1016/j.ijdrr.2022.103171",
+      "external": true
+    },
+    {
+      "url": "https://doi.org/10.24294/jipd.v8i9.5969",
+      "external": true
+    },
+    {
+      "url": "https://www.researchgate.net/profile/Pongsun-Bunditsakulchai-2",
+      "external": true
+    },
+    {
+      "url": "https://civil.eng.chula.ac.th/web/pongsun-bunditsakulchai/",
+      "external": true
+    },
+    {
+      "url": "/geo/classes.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/classes_36.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/classes_45.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/classes_all_40.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/feeders.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/stations.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/khet.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/rail.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/station_iso.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/primal_15.geojson",
+      "status": 200
+    },
+    {
+      "url": "/geo/meta.json",
+      "status": 200
+    }
+  ],
+  "interactions": {
+    "accessMap": {
+      "painted": {
+        "distinctColours": 41,
+        "width": 1198,
+        "height": 620
+      },
+      "stationSearch": "Ari",
+      "viewSwitch": true
+    },
+    "publications": {
+      "initial": "18\n      results",
+      "noResultsState": true,
+      "ridership": "2\n      results  matching “ridership”"
+    },
+    "simulator": {
+      "before": "At 10.0 km with a 8 minute walk to the nearest stop, urban rail leads with 56 percent of trips under dry conditions and middle value of time.",
+      "after": "At 10.0 km with a 8 minute walk to the nearest stop, urban rail leads with 73 percent of trips under heavy rain conditions and middle value of time."
+    },
+    "inquiryForm": {
+      "validationShown": true,
+      "summaryAlertShown": true,
+      "badEmailBlocked": true,
+      "successVisible": true,
+      "reference": "1dc7b24c-5dbe-4acb-ac69-7ba78a66cdc7"
+    },
+    "failures": []
+  },
+  "performance": [
+    {
+      "route": "/",
+      "domContentLoadedMs": 18,
+      "loadMs": 44,
+      "transferKB": 563,
+      "requests": 43,
+      "measuredLoadMs": 48
+    },
+    {
+      "route": "/about/",
+      "domContentLoadedMs": 36,
+      "loadMs": 39,
+      "transferKB": 287,
+      "requests": 36,
+      "measuredLoadMs": 42
+    },
+    {
+      "route": "/research/",
+      "domContentLoadedMs": 36,
+      "loadMs": 43,
+      "transferKB": 373,
+      "requests": 38,
+      "measuredLoadMs": 47
+    },
+    {
+      "route": "/projects/",
+      "domContentLoadedMs": 35,
+      "loadMs": 38,
+      "transferKB": 510,
+      "requests": 38,
+      "measuredLoadMs": 40
+    },
+    {
+      "route": "/publications/",
+      "domContentLoadedMs": 15,
+      "loadMs": 41,
+      "transferKB": 288,
+      "requests": 35,
+      "measuredLoadMs": 44
+    },
+    {
+      "route": "/people/",
+      "domContentLoadedMs": 49,
+      "loadMs": 53,
+      "transferKB": 619,
+      "requests": 45,
+      "measuredLoadMs": 54
+    },
+    {
+      "route": "/data/",
+      "domContentLoadedMs": 35,
+      "loadMs": 38,
+      "transferKB": 507,
+      "requests": 37,
+      "measuredLoadMs": 39
+    },
+    {
+      "route": "/access/",
+      "domContentLoadedMs": 39,
+      "loadMs": 42,
+      "transferKB": 1012,
+      "requests": 43,
+      "measuredLoadMs": 44
+    },
+    {
+      "route": "/simulator/",
+      "domContentLoadedMs": 48,
+      "loadMs": 51,
+      "transferKB": 296,
+      "requests": 36,
+      "measuredLoadMs": 53
+    },
+    {
+      "route": "/news/",
+      "domContentLoadedMs": 33,
+      "loadMs": 39,
+      "transferKB": 262,
+      "requests": 35,
+      "measuredLoadMs": 41
+    },
+    {
+      "route": "/contact/",
+      "domContentLoadedMs": 34,
+      "loadMs": 38,
+      "transferKB": 293,
+      "requests": 34,
+      "measuredLoadMs": 41
+    },
+    {
+      "route": "/brand/",
+      "domContentLoadedMs": 41,
+      "loadMs": 44,
+      "transferKB": 294,
+      "requests": 33,
+      "measuredLoadMs": 47
+    }
+  ],
+  "summary": {
+    "routes": 12,
+    "a11yViolationNodes": 0,
+    "a11yRoutesWithViolations": 0,
+    "consoleErrors": 0,
+    "responsiveOverflow": 0,
+    "brokenInternalLinks": 0,
+    "interactionFailures": 0,
+    "maxTransferKB": 1012
+  }
+}

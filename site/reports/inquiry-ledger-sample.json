@@ -1,0 +1,41 @@
+{
+  "note": "One real submission captured during verification, kept as evidence. The live ledger (data/inquiries.jsonl) was cleared afterwards.",
+  "record": {
+    "id": "8a9e60e8-3642-4cbc-bc67-c020ed2b2fca",
+    "receivedAt": "2026-09-21T02:47:41.669Z",
+    "source": "/contact/",
+    "name": "Verification Run",
+    "email": "verify@alis.test",
+    "organisation": "",
+    "enquiryType": "data-access",
+    "enquiryTypeLabel": "Data access",
+    "message": "Testing the enquiry pipeline end to end.",
+    "consent": true,
+    "consentText": "I agree that ALIS may store this enquiry and contact me about it.",
+    "status": "new",
+    "userAgent": "HeadlessChrome/153.0.0.0"
+  },
+  "fieldsCaptured": [
+    "consent",
+    "consentText",
+    "email",
+    "enquiryType",
+    "enquiryTypeLabel",
+    "id",
+    "message",
+    "name",
+    "organisation",
+    "receivedAt",
+    "source",
+    "status",
+    "userAgent"
+  ],
+  "verification": {
+    "submissionsRecorded": 4,
+    "allWithTimestamp": true,
+    "allWithSource": true,
+    "allWithConsent": true,
+    "exportJson": "GET /api/inquiries",
+    "exportCsv": "GET /api/inquiries.csv"
+  }
+}
