@@ -110,6 +110,7 @@ const REQUIRED_DIRS = [
 const ALLOWED_IGNORED = new RegExp(
   [
     '^\\.openclaw', //                  assistant runtime and scratch
+    '^\\.autoclaw/', //                 platform state, including Function Compute session bindings
     '^\\.cluster/',
     '^\\.agents/',
     '^\\.claude/',
