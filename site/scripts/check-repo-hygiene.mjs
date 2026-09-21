@@ -103,6 +103,57 @@ const REQUIRED_DIRS = [
   ['site/brand', 20, 'exported identity pack']
 ];
 
+/**
+ * Every kind of path the ignore rules are allowed to hide. Anything else means a rule is too broad
+ * and is probably swallowing something the site needs.
+ */
+const ALLOWED_IGNORED = new RegExp(
+  [
+    '^\\.openclaw', //                  assistant runtime and scratch
+    '^\\.cluster/',
+    '^\\.agents/',
+    '^\\.claude/',
+    '^\\.cursor',
+    '^\\.windsurf/',
+    '^\\.continue/',
+    '^\\.codex/',
+    '^\\.gemini/',
+    '^\\.aider',
+    '^\\.clinerules$',
+    '^memory/',
+    '^prompts/',
+    '^DELIVERY/', //                     local delivery folder
+    '^site/(build|node_modules|\\.svelte-kit|data)/', // build output and the enquiry ledger
+    '^web/(build|node_modules|\\.svelte-kit)/',
+    '^_site/',
+    '^\\.jekyll-cache/',
+    '^\\.jekyll-metadata$',
+    '^\\.sass-cache/',
+    '^scripts/access/(\\.venv|cache)/',
+    '^vendor/bundle/',
+    '^\\.bundle/',
+    '^__pycache__/',
+    '.*\\.pyc$',
+    '.*\\.agent\\.md$',
+    '^AGENTS\\.md$',
+    '^SOUL\\.md$',
+    '^IDENTITY\\.md$',
+    '^USER\\.md$',
+    '^TOOLS\\.md$',
+    '^HEARTBEAT\\.md$',
+    '^BOOTSTRAP\\.md$',
+    '^MEMORY\\.md$',
+    '^CLAUDE(\\.local)?\\.md$',
+    '^GEMINI\\.md$',
+    '^NOTES\\.local\\.md$',
+    '\\.env(\\..*)?$',
+    '^\\.DS_Store$'
+  ].join('|')
+);
+
+/** Paths that must never be ignored, whatever the rules say. */
+const NEVER_IGNORED = /^(site\/(src|static|scripts|server|docs|reports|brand)\/|site\/[^/]+$|\.github\/|_config\.yml$|README\.md$|EDITING\.md$|Gemfile(\.lock)?$|LICENSE$)/;
+
 const files = tracked();
 const problems = [];
 
@@ -140,6 +191,42 @@ if (ignoredLedger.length) {
   );
 }
 
+// --- the ignore rules must not be too broad --------------------------------------------
+function git(args) {
+  return execFileSync('git', ['-C', repoRoot, ...args], { encoding: 'utf8' }).split('\n').filter(Boolean);
+}
+
+// A tracked file that .gitignore would also match means someone force-added it.
+const trackedButIgnored = git(['ls-files', '-ci', '--exclude-standard']);
+if (trackedButIgnored.length) {
+  problems.push(
+    ['A tracked file is also matched by .gitignore (force-added?):'].concat(
+      trackedButIgnored.map((f) => '    ' + f)
+    )
+  );
+}
+
+// Every ignored path must be a category we intend to hide, and never site source.
+const ignoredPaths = git(['ls-files', '--others', '--ignored', '--exclude-standard']);
+const strayIgnored = ignoredPaths.filter((f) => !ALLOWED_IGNORED.test(f));
+const ignoredSource = ignoredPaths.filter((f) => NEVER_IGNORED.test(f));
+if (ignoredSource.length) {
+  problems.push(
+    ['An ignore rule is hiding something the site needs:'].concat(
+      ignoredSource.slice(0, 20).map((f) => '    ' + f),
+      ignoredSource.length > 20 ? [`    ...and ${ignoredSource.length - 20} more`] : []
+    )
+  );
+}
+if (strayIgnored.length) {
+  problems.push(
+    ['Ignored path does not fall into any expected category (rule may be too broad):'].concat(
+      strayIgnored.slice(0, 20).map((f) => '    ' + f),
+      strayIgnored.length > 20 ? [`    ...and ${strayIgnored.length - 20} more`] : []
+    )
+  );
+}
+
 const branch = execFileSync('git', ['-C', repoRoot, 'rev-parse', '--abbrev-ref', 'HEAD'], { encoding: 'utf8' }).trim();
 const head = execFileSync('git', ['-C', repoRoot, 'rev-parse', '--short', 'HEAD'], { encoding: 'utf8' }).trim();
 
@@ -147,6 +234,8 @@ console.log(`Repository guard — ${repoRoot}`);
 console.log(`  branch ${branch} at ${head}, ${files.length} tracked files`);
 console.log('  tracked file counts:');
 for (const line of counts) console.log(line);
+console.log(`  ignored paths: ${ignoredPaths.length} — all in expected categories: ${strayIgnored.length === 0}`);
+console.log(`  tracked files also matched by .gitignore: ${trackedButIgnored.length}`);
 
 if (problems.length) {
   console.log('');
@@ -155,7 +244,7 @@ if (problems.length) {
   process.exit(1);
 }
 
-console.log('\nGuard passed: no assistant artefact is tracked, and every file the site needs is committed.');
+console.log('\nGuard passed: no assistant artefact is tracked, every file the site needs is committed, and no ignore rule hides site source.');
 
 // If a build is present, also confirm the artifact's entry point is intact.
 const build = path.join(repoRoot, 'site', 'build');
