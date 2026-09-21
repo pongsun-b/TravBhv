@@ -124,6 +124,10 @@ const ALLOWED_IGNORED = new RegExp(
     '^prompts/',
     '^DELIVERY/', //                     local delivery folder
     '^site/(build|node_modules|\\.svelte-kit|data)/', // build output and the enquiry ledger
+    // Vite writes a temporary copy of the config while it loads it and normally removes it again.
+    // If a build is interrupted it can be left behind, so it is allowed rather than alarming.
+    '^site/vite\\.config\\.[jt]s\\.timestamp-',
+    '\\.timestamp-[0-9]+-',
     '^web/(build|node_modules|\\.svelte-kit)/',
     '^_site/',
     '^\\.jekyll-cache/',
@@ -151,8 +155,23 @@ const ALLOWED_IGNORED = new RegExp(
   ].join('|')
 );
 
-/** Paths that must never be ignored, whatever the rules say. */
-const NEVER_IGNORED = /^(site\/(src|static|scripts|server|docs|reports|brand)\/|site\/[^/]+$|\.github\/|_config\.yml$|README\.md$|EDITING\.md$|Gemfile(\.lock)?$|LICENSE$)/;
+/**
+ * Paths that must never be ignored, whatever the rules say. The list is explicit rather than a
+ * directory wildcard: a pattern like `site/[^/]+$` also matches transient tool files such as
+ * Vite's `vite.config.js.timestamp-*.mjs`, which produced a false failure once.
+ */
+const NEVER_IGNORED = new RegExp(
+  [
+    '^site/(src|static|scripts|server|docs|reports|brand)/',
+    '^site/(package\\.json|package-lock\\.json|svelte\\.config\\.js|vite\\.config\\.js|jsconfig\\.json|\\.gitignore|README\\.md|HANDOFF\\.md|START-HERE\\.md|design-tokens\\.json)$',
+    '^\\.github/\\S+$',
+    '^_config\\.yml$',
+    '^README\\.md$',
+    '^EDITING\\.md$',
+    '^LICENSE$',
+    '^Gemfile(\\.lock)?$'
+  ].join('|')
+);
 
 const files = tracked();
 const problems = [];
