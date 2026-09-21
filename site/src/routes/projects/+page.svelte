@@ -181,11 +181,12 @@
   .theses__title {
     font-family: var(--font-display);
     font-size: 1.1rem;
-    line-height: 1.3;
+    /* Thesis titles run to two or three lines; 1.3 crowded them. */
+    line-height: 1.45;
     letter-spacing: -0.012em;
     color: var(--ink);
     margin: 0 0 0.4rem;
-    max-width: 74ch;
+    max-width: var(--measure);
   }
 
   @media (max-width: 820px) {

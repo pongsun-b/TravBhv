@@ -189,7 +189,7 @@
   }
 
   .search label {
-    font-size: var(--fs-caption);
+    font-size: var(--fs-sm);
     font-weight: 600;
     color: var(--ink);
   }

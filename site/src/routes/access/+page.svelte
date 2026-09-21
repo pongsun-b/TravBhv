@@ -138,10 +138,11 @@
   }
 
   .note {
-    font-size: var(--fs-xs);
-    color: var(--muted);
+    /* Was 14px at an 82ch measure - small and long for a paragraph of running text. */
+    font-size: var(--fs-sm);
+    color: var(--ink-2);
     margin-top: var(--space-lg);
-    max-width: 82ch;
+    max-width: var(--measure);
   }
 
   .method {
@@ -170,7 +171,7 @@
     margin: 0;
     font-size: var(--fs-sm);
     color: var(--ink-2);
-    max-width: 74ch;
+    max-width: var(--measure);
   }
 
   .related {
@@ -179,7 +180,7 @@
     border-radius: var(--r-surface);
     padding: var(--space-xl);
     box-shadow: var(--shadow-1);
-    max-width: 82ch;
+    max-width: 72ch;
   }
 
   .related h2 {

@@ -58,6 +58,8 @@ NOTES.local.md
 prompts/
 
 # Assistant runtime state (session data, attachments, cluster scratch)
+# AutoClaw platform state, including Function Compute session bindings - never site content.
+.autoclaw/
 .openclaw/
 .openclaw-attachments/
 .openclaw-tmp/

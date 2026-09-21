@@ -290,10 +290,11 @@
   .alumni__thesis {
     font-family: var(--font-display);
     font-size: 1.08rem;
-    line-height: 1.3;
+    /* Same as the thesis list on /projects/: two-line titles need more air. */
+    line-height: 1.45;
     color: var(--ink);
     margin: 0 0 0.35rem;
-    max-width: 74ch;
+    max-width: var(--measure);
   }
 
   .alumni__report {

@@ -609,9 +609,10 @@
   }
 
   .sim__note {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.55;
+    /* 0.82rem measured 13.1px, below a comfortable reading size for a sentence. */
+    font-size: var(--fs-sm);
+    color: var(--ink-2);
+    line-height: 1.6;
     margin: 0;
     max-width: 62ch;
   }

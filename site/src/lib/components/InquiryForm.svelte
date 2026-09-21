@@ -354,7 +354,7 @@
   }
 
   label {
-    font-size: var(--fs-xs);
+    font-size: var(--fs-sm);
     font-weight: 600;
     color: var(--ink);
   }
@@ -461,8 +461,9 @@
   }
 
   .note {
-    font-size: var(--fs-caption);
-    color: var(--muted);
+    /* Caption size was 13px; this carries a real sentence, so it reads at body-small. */
+    font-size: var(--fs-sm);
+    color: var(--ink-2);
     margin: 0;
     max-width: 44ch;
   }

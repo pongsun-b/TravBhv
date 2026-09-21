@@ -21,7 +21,7 @@
 <style>
   .note {
     padding-block: clamp(2.5rem, 6vw, 4.5rem) var(--space-3xl);
-    max-width: 74ch;
+    max-width: var(--measure);
   }
 
   .crumb,
