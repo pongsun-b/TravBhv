@@ -13,7 +13,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "alis-deliverables.zip"
+OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "tbrg-deliverables.zip"
 
 # (source path relative to project root, destination inside the archive)
 SINGLE = [

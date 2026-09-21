@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-  <title>Research · Transportation Behavior Lab</title>
+  <title>Research · TBRG</title>
   <meta
     name="description"
     content="How movement becomes evidence: travel behavior surveys and analysis, transportation engineering, planning, and first-mile walk access to urban rail in Bangkok."

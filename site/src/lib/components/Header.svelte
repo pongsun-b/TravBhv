@@ -40,7 +40,7 @@
     theme = next;
     document.documentElement.setAttribute('data-theme', next);
     try {
-      localStorage.setItem('alis-theme', next);
+      localStorage.setItem('tbrg-theme', next);
     } catch (e) {
       /* storage can be unavailable in private mode */
     }

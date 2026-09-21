@@ -1,9 +1,9 @@
 {
-  "name": "alis-lab-site",
+  "name": "tbrg-lab-site",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "ALIS, the Transportation Behavior Lab. Identity system and website, built with SvelteKit.",
+  "description": "TBRG, the Travel Behavior Research Group. Identity system and website, built with SvelteKit.",
   "scripts": {
     "prepare": "svelte-kit sync",
     "dev": "vite dev",

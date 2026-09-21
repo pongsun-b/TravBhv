@@ -67,7 +67,7 @@ for (const name of order) {
 }
 
 const payload = {
-  name: 'ALIS design tokens',
+  name: 'TBRG design tokens',
   version: '1.0.0',
   source: 'src/lib/tokens.css',
   note: 'Generated file. Edit src/lib/tokens.css and re-run scripts/tokens-export.mjs.',

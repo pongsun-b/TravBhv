@@ -1,7 +1,7 @@
 {
-  "name": "ALIS",
-  "short_name": "ALIS",
-  "description": "Transportation Behavior Lab",
+  "name": "TBRG",
+  "short_name": "TBRG",
+  "description": "Travel Behavior Research Group",
   "theme_color": "#2E6B57",
   "background_color": "#F4F5F2",
   "display": "standalone",

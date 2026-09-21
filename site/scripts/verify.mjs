@@ -268,7 +268,7 @@ for (const w of WIDTHS) {
   await page.waitForTimeout(300);
   const badEmailBlocked = await page.isVisible('#inq-mail-err');
 
-  await page.fill('#inq-mail', 'verify@alis.test');
+  await page.fill('#inq-mail', 'verify@tbrg.test');
   await page.click('button[type="submit"]');
   await page.waitForTimeout(1200);
   const successVisible = await page.isVisible('.done[role="status"]');

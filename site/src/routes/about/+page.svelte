@@ -35,10 +35,10 @@
 </script>
 
 <svelte:head>
-  <title>About · ALIS</title>
+  <title>About · TBRG</title>
   <meta
     name="description"
-    content="ALIS is the Transportation Behavior Lab in the Department of Civil Engineering at Chulalongkorn University. What the lab studies, how it works, and what it stands for."
+    content="TBRG is the Travel Behavior Research Group in the Department of Civil Engineering at Chulalongkorn University. What the lab studies, how it works, and what it stands for."
   />
 </svelte:head>
 
@@ -46,7 +46,7 @@
   <p class="meta">About the lab</p>
   <h1>We study the decisions inside a journey.</h1>
   <p class="lede">
-    ALIS is the Transportation Behavior Lab, based in the {site.affiliation.dept} at {site.affiliation
+    TBRG is the Travel Behavior Research Group, based in the {site.affiliation.dept} at {site.affiliation
       .university}. Work runs from travel decisions outward: surveys and models of how people move,
     then engineering and planning that can act on that evidence.
   </p>

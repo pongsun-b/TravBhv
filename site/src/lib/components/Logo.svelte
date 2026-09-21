@@ -1,6 +1,6 @@
 <script>
   /**
-   * ALIS logo. Renders from the same generated paths as the exported asset pack,
+   * TBRG logo. Renders from the same generated paths as the exported asset pack,
    * so site and downloads can never drift. Inherits currentColor.
    *
    * variant: 'horizontal' | 'stacked' | 'mark' | 'monogram'
@@ -28,7 +28,7 @@
     stroke="currentColor"
     stroke-linejoin="round"
     role="img"
-    aria-label="ALIS"
+    aria-label="TBRG"
   >
     {@html M.paths}
   </svg>
@@ -39,7 +39,7 @@
     width={height}
     height={height}
     role="img"
-    aria-label="ALIS"
+    aria-label="TBRG"
   >
     <path fill="currentColor" d={monogram.d} />
   </svg>
@@ -62,12 +62,12 @@
       width={wordH * (vb[2] / vb[3])}
       height={wordH}
       role="img"
-      aria-label="ALIS"
+      aria-label="TBRG"
     >
       <path fill="currentColor" d={wordmark.d} />
     </svg>
     {#if showDescriptor}
-      <span class="logo__descriptor">Transportation Behavior Lab</span>
+      <span class="logo__descriptor">Travel Behavior Research Group</span>
     {/if}
   </span>
 {:else}
@@ -89,7 +89,7 @@
       width={wordH * (vb[2] / vb[3])}
       height={wordH}
       role="img"
-      aria-label="ALIS"
+      aria-label="TBRG"
     >
       <path fill="currentColor" d={wordmark.d} />
     </svg>

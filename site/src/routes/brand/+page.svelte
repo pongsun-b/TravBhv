@@ -110,15 +110,15 @@
 </script>
 
 <svelte:head>
-  <title>Brand guide · ALIS</title>
-  <meta name="description" content="The ALIS identity: logo, marks, clear space, colour and type." />
+  <title>Brand guide · TBRG</title>
+  <meta name="description" content="The TBRG identity: logo, marks, clear space, colour and type." />
 </svelte:head>
 
 <section class="wrap page-head">
   <p class="meta">Identity</p>
-  <h1>ALIS brand guide</h1>
+  <h1>TBRG brand guide</h1>
   <p class="lede">
-    One source of truth for the ALIS identity: how the mark behaves, how much space it needs, the
+    One source of truth for the TBRG identity: how the mark behaves, how much space it needs, the
     palette with its measured contrast, and the type system.
   </p>
 </section>

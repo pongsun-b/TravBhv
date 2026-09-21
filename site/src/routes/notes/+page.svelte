@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>Notes · Transportation Behavior Lab</title>
+  <title>Notes · TBRG</title>
   <meta
     name="description"
     content="Writing from the lab: walk access to urban rail, primal and dual access, and how PTAI differs from the walk-access map."

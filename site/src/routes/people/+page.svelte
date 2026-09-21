@@ -7,10 +7,10 @@
 </script>
 
 <svelte:head>
-  <title>People · Transportation Behavior Lab</title>
+  <title>People · TBRG</title>
   <meta
     name="description"
-    content="Faculty, current graduate researchers, and alumni of the Transportation Behavior Lab, Department of Civil Engineering, Chulalongkorn University."
+    content="Faculty, current graduate researchers, and alumni of the Travel Behavior Research Group, Department of Civil Engineering, Chulalongkorn University."
   />
 </svelte:head>
 

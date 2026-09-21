@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-  <title>{note.title} · Notes · ALIS</title>
+  <title>{note.title} · Notes · TBRG</title>
   <meta name="description" content={note.summary} />
 </svelte:head>
 

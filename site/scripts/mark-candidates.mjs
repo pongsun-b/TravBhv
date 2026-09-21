@@ -73,7 +73,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
   .cell{display:flex;align-items:center;}
   .head span{display:block;}
 </style></head><body><div class="sheet">
-  <h1>ALIS mark - candidate comparison</h1>
+  <h1>TBRG mark - candidate comparison</h1>
   <p class="sub">Display size, then 48 / 32 / 24 / 16 px, then the same three inside a tile at 48 / 24 / 16 px.</p>
   <div class="head"><span>Candidate</span><span>96 px</span><span>48</span><span>32</span><span>24</span><span>16</span><span>tile 48</span><span>tile 24</span><span>tile 16</span></div>
   ${rows}

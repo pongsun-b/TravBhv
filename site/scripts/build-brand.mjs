@@ -1,5 +1,5 @@
 /**
- * Builds the ALIS identity assets.
+ * Builds the TBRG identity assets.
  *
  * The wordmark is outlined from Instrument Sans (SIL OFL 1.1) so the shipped
  * logo does not depend on the font being installed. The mark is pure geometry.
@@ -27,7 +27,7 @@ function loadFont(file) {
 
 /**
  * opentype.js cannot run this font's GSUB table, so lay the string out glyph by
- * glyph and apply our own tracking. Kerning pairs in "ALIS" are negligible.
+ * glyph and apply our own tracking. `kerns` is available for pairs that still need it.
  */
 function outline(font, text, { size = 100, tracking = 0, kerns = {} } = {}) {
   const scale = size / font.unitsPerEm;
@@ -63,16 +63,16 @@ const semibold = loadFont('instrument-sans-latin-600-normal.woff');
 const bold = loadFont('instrument-sans-latin-700-normal.woff');
 const regular = loadFont('instrument-sans-latin-400-normal.woff');
 
-/* Pair kerning evens out the A-L air that a geometric A leaves behind. */
-const WORD = outline(semibold, 'ALIS', {
+/* "TBRG" at even tracking: the letterforms are boxy and share vertical stems, so no manual
+   pair adjustments are needed the way the previous word required. */
+const WORD = outline(semibold, 'TBRG', {
   size: 100,
-  tracking: 0.045,
-  kerns: { 'A-L': -30, 'L-I': -15, 'I-S': -17 }
+  tracking: 0.045
 });
-const DESCRIPTOR = outline(regular, 'TRANSPORTATION BEHAVIOR LAB', { size: 100, tracking: 0.16 });
+const DESCRIPTOR = outline(regular, 'TRAVEL BEHAVIOR RESEARCH GROUP', { size: 100, tracking: 0.16 });
 /* Secondary mark: the monogram. Carries the identity at 16 px, where no
    abstract mark survives. */
-const MONO = outline(bold, 'A', { size: 100 });
+const MONO = outline(bold, 'T', { size: 100 });
 
 const ACCENT = '#2E6B57';
 
@@ -96,7 +96,7 @@ const MARK_SMALL = `
       <circle cx="17.23" cy="6.77" r="3.5" stroke="none" />
     </g>`;
 
-const markSvg = (body, stroke, fill, size = 24) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${size}" height="${size}" role="img" aria-label="ALIS mark">
+const markSvg = (body, stroke, fill, size = 24) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${size}" height="${size}" role="img" aria-label="TBRG mark">
   <g stroke="${stroke}" stroke-linecap="round" stroke-linejoin="round" fill="${fill}">${body}
   </g>
 </svg>
@@ -110,7 +110,7 @@ const tileSvg = (size = 32) => {
   const x = (32 - (MONO.box.x2 - MONO.box.x1) * scale) / 2 - MONO.box.x1 * scale;
   /* A triangular letter needs optical, not geometric, vertical centring. */
   const y = (32 - capH * scale) / 2 - MONO.box.y1 * scale - 0.5;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="${size}" height="${size}" role="img" aria-label="ALIS">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="${size}" height="${size}" role="img" aria-label="TBRG">
   <rect width="32" height="32" rx="9" fill="${ACCENT}"/>
   <g transform="translate(${x.toFixed(2)} ${y.toFixed(2)}) scale(${scale.toFixed(4)})">
     <path fill="#FFFFFF" d="${MONO.d}"/>
@@ -128,29 +128,29 @@ function write(name, content) {
 
 console.log('Writing identity SVG assets:');
 
-write('alis-mark.svg', markSvg(MARK_BIG, ACCENT, ACCENT));
-write('alis-mark-small.svg', markSvg(MARK_SMALL, ACCENT, ACCENT));
-write('alis-mark-mono.svg', markSvg(MARK_BIG, 'currentColor', 'currentColor'));
-write('alis-monogram.svg', `
+write('tbrg-mark.svg', markSvg(MARK_BIG, ACCENT, ACCENT));
+write('tbrg-mark-small.svg', markSvg(MARK_SMALL, ACCENT, ACCENT));
+write('tbrg-mark-mono.svg', markSvg(MARK_BIG, 'currentColor', 'currentColor'));
+write('tbrg-monogram.svg', `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="${(MONO.box.x1 - 4).toFixed(2)} ${(
   MONO.box.y1 - 4
 ).toFixed(2)} ${(MONO.box.x2 - MONO.box.x1 + 8).toFixed(2)} ${(MONO.box.y2 - MONO.box.y1 + 8).toFixed(
   2
-)}" role="img" aria-label="ALIS monogram">
+)}" role="img" aria-label="TBRG monogram">
   <path fill="currentColor" d="${MONO.d}"/>
 </svg>
 `.trimStart());
-write('alis-tile.svg', tileSvg());
+write('tbrg-tile.svg', tileSvg());
 
 /* Wordmark only. */
 const pad = 6;
 write(
-  'alis-wordmark.svg',
+  'tbrg-wordmark.svg',
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${(WORD.box.x1 - pad).toFixed(2)} ${(
     WORD.box.y1 - pad
   ).toFixed(2)} ${(WORD.box.x2 - WORD.box.x1 + pad * 2).toFixed(2)} ${(
     WORD.box.y2 - WORD.box.y1 + pad * 2
-  ).toFixed(2)}" role="img" aria-label="ALIS">
+  ).toFixed(2)}" role="img" aria-label="TBRG">
   <path fill="currentColor" d="${WORD.d}"/>
 </svg>
 `
@@ -169,10 +169,10 @@ const wmX = markH + gap;
 const wmY = (lockupH - capH) / 2 - WORD.box.y1;
 
 write(
-  'alis-lockup-horizontal.svg',
+  'tbrg-lockup-horizontal.svg',
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${(totalW + 8).toFixed(
     2
-  )} ${(lockupH + 8).toFixed(2)}" role="img" aria-label="ALIS">
+  )} ${(lockupH + 8).toFixed(2)}" role="img" aria-label="TBRG">
   <g transform="translate(4 4)">
     <g transform="translate(0 ${((lockupH - markH) / 2).toFixed(2)}) scale(${(markH / 24).toFixed(
       4
@@ -192,13 +192,13 @@ const descScale = (capH * 0.3) / 100;
 const descW = DESCRIPTOR.width * descScale;
 const stackW = Math.max(stackMarkH, WORD.width, descW);
 write(
-  'alis-lockup-stacked.svg',
+  'tbrg-lockup-stacked.svg',
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${(stackW + 8).toFixed(2)} ${(
     stackMarkH +
     8 +
     capH +
     capH * 0.55
-  ).toFixed(2)}" role="img" aria-label="ALIS, Transportation Behavior Lab">
+  ).toFixed(2)}" role="img" aria-label="TBRG, Travel Behavior Research Group">
   <g transform="translate(4 4)">
     <g transform="scale(${(stackMarkH / 24).toFixed(4)})" stroke="${ACCENT}" stroke-linecap="round" stroke-linejoin="round" fill="${ACCENT}">${MARK_BIG}
     </g>
@@ -217,14 +217,14 @@ write(
 
 /* The descriptor on its own, for the guidelines page. */
 write(
-  'alis-descriptor.svg',
+  'tbrg-descriptor.svg',
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${(DESCRIPTOR.box.x1 - 4).toFixed(2)} ${(
     DESCRIPTOR.box.y1 - 4
   ).toFixed(2)} ${(DESCRIPTOR.box.x2 - DESCRIPTOR.box.x1 + 8).toFixed(2)} ${(
     DESCRIPTOR.box.y2 -
     DESCRIPTOR.box.y1 +
     8
-  ).toFixed(2)}" role="img" aria-label="Transportation Behavior Lab">
+  ).toFixed(2)}" role="img" aria-label="Travel Behavior Research Group">
   <path fill="currentColor" d="${DESCRIPTOR.d}"/>
 </svg>
 `

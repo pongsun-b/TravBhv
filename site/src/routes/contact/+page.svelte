@@ -26,10 +26,10 @@
 </script>
 
 <svelte:head>
-  <title>Contact and join · ALIS</title>
+  <title>Contact and join · TBRG</title>
   <meta
     name="description"
-    content="Contact ALIS, the Transportation Behavior Lab at Chulalongkorn University. Data access, collaboration, graduate study, and media enquiries."
+    content="Contact TBRG, the Travel Behavior Research Group at Chulalongkorn University. Data access, collaboration, graduate study, and media enquiries."
   />
 </svelte:head>
 

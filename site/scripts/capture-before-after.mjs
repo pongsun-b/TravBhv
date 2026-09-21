@@ -131,7 +131,7 @@ for vp in ['desktop', 'mobile']:
         sheet = Image.new('RGB', (PANEL*2 + 36, h + 58), BG)
         d = ImageDraw.Draw(sheet)
         d.text((4, 12), f'BEFORE  ·  pre-restyle  ·  {key}  ·  {vp}', fill=(70,80,75))
-        d.text((PANEL+40, 12), f'AFTER  ·  ALIS  ·  {key}  ·  {vp}', fill=(46,107,87))
+        d.text((PANEL+40, 12), f'AFTER  ·  TBRG  ·  {key}  ·  {vp}', fill=(46,107,87))
         sheet.paste(ib, (0, 48))
         sheet.paste(ia, (PANEL+36, 48))
         d.line([(PANEL+16, 48), (PANEL+16, h+48)], fill=(210,214,206), width=1)
@@ -144,8 +144,8 @@ TW, TH = 560, 420
 cellw = TW*2 + 20
 sheet = Image.new('RGB', (COLS*cellw + 40, ROWS*(TH+56) + 60), BG)
 d = ImageDraw.Draw(sheet)
-d.text((16, 12), 'ALIS restyle - before / after, desktop 1440 px, top of each page', fill=(22,26,25))
-d.text((16, 30), 'left = pre-restyle live site, right = ALIS. Full-length comparisons are in the compare-*.jpg files.', fill=(95,104,100))
+d.text((16, 12), 'TBRG restyle - before / after, desktop 1440 px, top of each page', fill=(22,26,25))
+d.text((16, 30), 'left = pre-restyle live site, right = TBRG. Full-length comparisons are in the compare-*.jpg files.', fill=(95,104,100))
 for i, key in enumerate(PAGES):
     cx = 16 + (i % COLS) * cellw
     cy = 60 + (i // COLS) * (TH + 56)
@@ -166,7 +166,7 @@ MW, MH = 470, 700
 cellw = MW*2 + 20
 sheet2 = Image.new('RGB', (MCOLS*cellw + 40, MROWS*(MH+56) + 60), BG)
 d2 = ImageDraw.Draw(sheet2)
-d2.text((16, 12), 'ALIS restyle - before / after, mobile 390 px', fill=(22,26,25))
+d2.text((16, 12), 'TBRG restyle - before / after, mobile 390 px', fill=(22,26,25))
 for i, key in enumerate(PAGES):
     cx = 16 + (i % MCOLS) * cellw
     cy = 60 + (i // MCOLS) * (MH + 56)

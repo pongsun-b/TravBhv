@@ -41,10 +41,10 @@
 </script>
 
 <svelte:head>
-  <title>Publications · ALIS</title>
+  <title>Publications · TBRG</title>
   <meta
     name="description"
-    content="Papers and book chapters from ALIS on transport, land use and ridership, electric vehicle adoption, environment, energy and the Thai economy."
+    content="Papers and book chapters from TBRG on transport, land use and ridership, electric vehicle adoption, environment, energy and the Thai economy."
   />
 </svelte:head>
 

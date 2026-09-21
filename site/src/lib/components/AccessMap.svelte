@@ -551,7 +551,7 @@
     const a = document.createElement('a');
     a.href = canvasEl.toDataURL('image/png');
     a.download =
-      'alis-walk-access-' +
+      'tbrg-walk-access-' +
       (view === 'walk' ? `${speed}kmh${boat ? '-boat' : ''}` : 'stations-15min') +
       '.png';
     a.click();

@@ -1,6 +1,6 @@
-# ALIS - handoff
+# TBRG - handoff
 
-Everything produced for the ALIS identity and site restyle, where it lives, how to change it, and
+Everything produced for the TBRG identity and site restyle, where it lives, how to change it, and
 how to put it live or roll it back.
 
 Read this first, then `README.md` to run the project and `docs/brand-guidelines.md` for the identity
@@ -139,9 +139,11 @@ numbers in `reports/performance-accessibility.md`.
 
 These were inferred to keep the work moving. Each is a one-line fix if the assumption is wrong.
 
-1. **"ALIS" is the lab's name** and "Transportation Behavior Lab" is its descriptor. The expansion
-   of the acronym is not recorded anywhere; add it to `docs/brand-guidelines.md` section 1 and to the
-   stacked lockup descriptor when confirmed.
+1. **The naming was reverted to the group's own name.** The restyle had introduced "TBRG" as the
+   lab's name with "Travel Behavior Research Group" as a descriptor, and recorded no expansion for
+   the acronym. The group's previous site used **Travel Behavior Research Group**, short form
+   **TBRG**, so that is what the site says now: wordmark, descriptor line, monogram (letter T),
+   page titles, meta tags and repository documentation.
 2. **Content was preserved, not rewritten.** Research, people, publications, projects and datasets
    carry over from the previous site. Headings on the new pages are new copy.
 3. **The previous site's crimson palette is retired.** If it needed to survive for an existing

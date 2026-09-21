@@ -42,10 +42,10 @@
 </script>
 
 <svelte:head>
-  <title>ALIS · Transportation Behavior Lab</title>
+  <title>TBRG · Travel Behavior Research Group</title>
   <meta
     name="description"
-    content="ALIS studies how people move through Bangkok and what those choices mean for transport systems, planning, and policy."
+    content="TBRG studies how people move through Bangkok and what those choices mean for transport systems, planning, and policy."
   />
 </svelte:head>
 

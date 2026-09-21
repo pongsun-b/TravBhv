@@ -7,10 +7,10 @@
 </script>
 
 <svelte:head>
-  <title>Projects · Transportation Behavior Lab</title>
+  <title>Projects · TBRG</title>
   <meta
     name="description"
-    content="Active and completed research at the Transportation Behavior Lab, from travel behavior surveys and mobile data analysis to planning tools for Bangkok and Thailand."
+    content="Active and completed research at the Travel Behavior Research Group, from travel behavior surveys and mobile data analysis to planning tools for Bangkok and Thailand."
   />
 </svelte:head>
 

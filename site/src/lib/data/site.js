@@ -1,9 +1,9 @@
 export const site = {
-  name: 'ALIS',
-  fullName: 'Transportation Behavior Lab',
+  name: 'TBRG',
+  fullName: 'Travel Behavior Research Group',
   tagline: 'How a city moves, one decision at a time.',
   description:
-    'ALIS is the Transportation Behavior Lab. We study how people move through Bangkok and what those choices mean for transport systems, planning, and policy.',
+    'TBRG is the Travel Behavior Research Group. We study how people move through Bangkok and what those choices mean for transport systems, planning, and policy.',
   affiliation: {
     dept: 'Department of Civil Engineering',
     university: 'Chulalongkorn University',

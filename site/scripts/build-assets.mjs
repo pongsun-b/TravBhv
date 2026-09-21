@@ -1,5 +1,5 @@
 /**
- * Renders the ALIS asset pack: PNGs, favicon set and social cards.
+ * Renders the TBRG asset pack: PNGs, favicon set and social cards.
  *
  *   node scripts/build-assets.mjs
  *
@@ -63,42 +63,42 @@ async function shot(markupHtml, w, h, out, { transparent = true, bg = null } = {
 
 console.log('Rendering PNG assets:');
 
-const mark = svg('alis-mark.svg');
-const markMono = svg('alis-mark-mono.svg');
-const lockH = svg('alis-lockup-horizontal.svg');
+const mark = svg('tbrg-mark.svg');
+const markMono = svg('tbrg-mark-mono.svg');
+const lockH = svg('tbrg-lockup-horizontal.svg');
 const lockHAccent = recolour(lockH, 'currentColor', INK);
 const lockHWhite = recolour(recolour(lockH, 'currentColor', LIGHT), ACCENT, LIGHT);
-const lockStack = svg('alis-lockup-stacked.svg');
+const lockStack = svg('tbrg-lockup-stacked.svg');
 const lockStackAccent = recolour(lockStack, 'currentColor', INK);
 const lockStackWhite = recolour(recolour(lockStack, 'currentColor', LIGHT), ACCENT, LIGHT);
-const wordmark = svg('alis-wordmark.svg');
+const wordmark = svg('tbrg-wordmark.svg');
 const wordmarkInk = recolour(wordmark, 'currentColor', INK);
-const tile = svg('alis-tile.svg');
+const tile = svg('tbrg-tile.svg');
 
 /* Marks */
 for (const size of [256, 512, 1024]) {
-  await shot(sized(mark, size, size), size, size, join(brand, 'png', `alis-mark-${size}.png`));
+  await shot(sized(mark, size, size), size, size, join(brand, 'png', `tbrg-mark-${size}.png`));
 }
 await shot(
   sized(markMono, 512, 512).replace(/currentColor/g, LIGHT),
   512,
   512,
-  join(brand, 'png', 'alis-mark-white-512.png')
+  join(brand, 'png', 'tbrg-mark-white-512.png')
 );
 await shot(
   sized(markMono, 512, 512).replace(/currentColor/g, INK),
   512,
   512,
-  join(brand, 'png', 'alis-mark-ink-512.png')
+  join(brand, 'png', 'tbrg-mark-ink-512.png')
 );
 
 /* Lockups */
-await shot(sized(lockHAccent, 1200, 372), 1200, 372, join(brand, 'png', 'alis-lockup-horizontal-1200.png'));
-await shot(sized(lockHAccent, 2400, 744), 2400, 744, join(brand, 'png', 'alis-lockup-horizontal-2400.png'));
-await shot(sized(lockHWhite, 1200, 372), 1200, 372, join(brand, 'png', 'alis-lockup-horizontal-white-1200.png'));
-await shot(sized(lockStackAccent, 800, 620), 800, 620, join(brand, 'png', 'alis-lockup-stacked-800.png'));
-await shot(sized(lockStackWhite, 800, 620), 800, 620, join(brand, 'png', 'alis-lockup-stacked-white-800.png'));
-await shot(sized(wordmarkInk, 1200, 420), 1200, 420, join(brand, 'png', 'alis-wordmark-1200.png'));
+await shot(sized(lockHAccent, 1200, 372), 1200, 372, join(brand, 'png', 'tbrg-lockup-horizontal-1200.png'));
+await shot(sized(lockHAccent, 2400, 744), 2400, 744, join(brand, 'png', 'tbrg-lockup-horizontal-2400.png'));
+await shot(sized(lockHWhite, 1200, 372), 1200, 372, join(brand, 'png', 'tbrg-lockup-horizontal-white-1200.png'));
+await shot(sized(lockStackAccent, 800, 620), 800, 620, join(brand, 'png', 'tbrg-lockup-stacked-800.png'));
+await shot(sized(lockStackWhite, 800, 620), 800, 620, join(brand, 'png', 'tbrg-lockup-stacked-white-800.png'));
+await shot(sized(wordmarkInk, 1200, 420), 1200, 420, join(brand, 'png', 'tbrg-wordmark-1200.png'));
 
 /* Favicon and app icon set */
 console.log('Rendering favicon set:');
@@ -116,9 +116,9 @@ writeFileSync(
   join(brand, 'favicon', 'site.webmanifest'),
   JSON.stringify(
     {
-      name: 'ALIS',
-      short_name: 'ALIS',
-      description: 'Transportation Behavior Lab',
+      name: 'TBRG',
+      short_name: 'TBRG',
+      description: 'Travel Behavior Research Group',
       theme_color: ACCENT,
       background_color: PAPER,
       display: 'standalone',
@@ -171,7 +171,7 @@ function card({ dark, headline, kicker }) {
 await shot(
   card({
     dark: false,
-    kicker: 'ALIS · Transportation Behavior Lab',
+    kicker: 'TBRG · Travel Behavior Research Group',
     headline: 'Bangkok moves by a million small decisions.'
   }),
   1200,
@@ -182,7 +182,7 @@ await shot(
 await shot(
   card({
     dark: true,
-    kicker: 'ALIS · Transportation Behavior Lab',
+    kicker: 'TBRG · Travel Behavior Research Group',
     headline: 'Bangkok moves by a million small decisions.'
   }),
   1200,

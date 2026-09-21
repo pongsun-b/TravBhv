@@ -11,7 +11,7 @@
     "enquiryTypeLabel": "Data access",
     "message": "Testing the enquiry pipeline end to end.",
     "consent": true,
-    "consentText": "I agree that ALIS may store this enquiry and contact me about it.",
+    "consentText": "I agree that TBRG may store this enquiry and contact me about it.",
     "status": "new",
     "userAgent": "HeadlessChrome/153.0.0.0"
   },

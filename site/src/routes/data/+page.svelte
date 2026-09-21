@@ -7,10 +7,10 @@
 </script>
 
 <svelte:head>
-  <title>Data · Transportation Behavior Lab</title>
+  <title>Data · TBRG</title>
   <meta
     name="description"
-    content="Open data from the Transportation Behavior Lab: walk-access isochrones to urban rail in Bangkok, station exits, district boundaries and a 16:9 poster."
+    content="Open data from the Travel Behavior Research Group: walk-access isochrones to urban rail in Bangkok, station exits, district boundaries and a 16:9 poster."
   />
 </svelte:head>
 

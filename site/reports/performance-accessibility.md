@@ -1,4 +1,4 @@
-# ALIS site - performance and accessibility report
+# TBRG site - performance and accessibility report
 
 Generated 2026-09-21T03:34:56.784Z against `http://localhost:4180`.
 Raw data: `reports/verification.json`. Re-run with `node scripts/verify.mjs [baseUrl]`.

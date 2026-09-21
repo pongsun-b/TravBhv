@@ -30,7 +30,7 @@
   ];
 
   const CONSENT_TEXT =
-    'I agree that ALIS may store this enquiry and contact me about it.';
+    'I agree that TBRG may store this enquiry and contact me about it.';
 
   let name = $state('');
   let mail = $state('');
@@ -91,7 +91,7 @@
     ]
       .filter(Boolean)
       .join('\n');
-    const subject = `Enquiry from the ALIS site: ${typeLabel(type)}`;
+    const subject = `Enquiry from the TBRG site: ${typeLabel(type)}`;
     return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 
@@ -204,7 +204,7 @@
     {#if status === 'error'}
       <p class="alert" role="alert">
         {errorMsg}
-        <a href="mailto:{email}?subject=Enquiry%20from%20the%20ALIS%20site">Email {email} instead</a>
+        <a href="mailto:{email}?subject=Enquiry%20from%20the%20TBRG%20site">Email {email} instead</a>
       </p>
     {:else if firstError && Object.keys(touched).length > 0}
       <p class="alert" role="alert">

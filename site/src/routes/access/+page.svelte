@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-  <title>Walk access to urban rail · ALIS</title>
+  <title>Walk access to urban rail · TBRG</title>
   <meta
     name="description"
     content="Interactive map of walk access to urban rail in Bangkok: 5, 10 and 15 minutes from a station exit at 3.6, 4.0 and 4.5 km/h, built on the OpenStreetMap walk graph."

@@ -1,6 +1,6 @@
 {
   "base": "http://localhost:4180",
-  "generatedAt": "2026-09-21T16:46:08.648Z",
+  "generatedAt": "2026-09-21T17:06:06.685Z",
   "routes": [
     "/",
     "/about/",
@@ -925,154 +925,154 @@
       "summaryAlertShown": true,
       "badEmailBlocked": true,
       "successVisible": true,
-      "reference": "a3c4b4e8-11bc-48a1-826e-651d3706d3c9"
+      "reference": "c2570e44-1b91-4643-a0dd-6aa3fc08a012"
     },
     "failures": []
   },
   "performance": [
     {
       "route": "/",
-      "domContentLoadedMs": 36,
-      "loadMs": 38,
-      "transferKB": 573,
+      "domContentLoadedMs": 34,
+      "loadMs": 37,
+      "transferKB": 574,
       "requests": 46,
-      "measuredLoadMs": 41
+      "measuredLoadMs": 39
     },
     {
       "route": "/about/",
-      "domContentLoadedMs": 17,
-      "loadMs": 33,
-      "transferKB": 290,
+      "domContentLoadedMs": 12,
+      "loadMs": 27,
+      "transferKB": 291,
       "requests": 38,
-      "measuredLoadMs": 35
+      "measuredLoadMs": 30
     },
     {
       "route": "/research/",
-      "domContentLoadedMs": 12,
-      "loadMs": 27,
-      "transferKB": 383,
+      "domContentLoadedMs": 31,
+      "loadMs": 36,
+      "transferKB": 384,
       "requests": 41,
-      "measuredLoadMs": 29
+      "measuredLoadMs": 39
     },
     {
       "route": "/projects/",
-      "domContentLoadedMs": 29,
+      "domContentLoadedMs": 30,
       "loadMs": 32,
-      "transferKB": 513,
+      "transferKB": 514,
       "requests": 40,
       "measuredLoadMs": 34
     },
     {
       "route": "/publications/",
-      "domContentLoadedMs": 29,
-      "loadMs": 31,
-      "transferKB": 291,
+      "domContentLoadedMs": 30,
+      "loadMs": 33,
+      "transferKB": 292,
       "requests": 37,
-      "measuredLoadMs": 34
-    },
-    {
-      "route": "/people/",
-      "domContentLoadedMs": 42,
-      "loadMs": 45,
-      "transferKB": 623,
-      "requests": 47,
-      "measuredLoadMs": 48
-    },
-    {
-      "route": "/data/",
-      "domContentLoadedMs": 17,
-      "loadMs": 34,
-      "transferKB": 510,
-      "requests": 39,
       "measuredLoadMs": 36
     },
     {
+      "route": "/people/",
+      "domContentLoadedMs": 12,
+      "loadMs": 27,
+      "transferKB": 623,
+      "requests": 47,
+      "measuredLoadMs": 28
+    },
+    {
+      "route": "/data/",
+      "domContentLoadedMs": 31,
+      "loadMs": 33,
+      "transferKB": 510,
+      "requests": 39,
+      "measuredLoadMs": 33
+    },
+    {
       "route": "/access/",
-      "domContentLoadedMs": 33,
-      "loadMs": 35,
+      "domContentLoadedMs": 35,
+      "loadMs": 37,
       "transferKB": 1015,
       "requests": 45,
-      "measuredLoadMs": 37
+      "measuredLoadMs": 39
     },
     {
       "route": "/simulator/",
       "domContentLoadedMs": 40,
-      "loadMs": 43,
+      "loadMs": 42,
       "transferKB": 299,
       "requests": 38,
-      "measuredLoadMs": 44
+      "measuredLoadMs": 45
     },
     {
       "route": "/news/",
       "domContentLoadedMs": 27,
       "loadMs": 29,
-      "transferKB": 272,
+      "transferKB": 273,
       "requests": 38,
-      "measuredLoadMs": 30
+      "measuredLoadMs": 32
     },
     {
       "route": "/notes/",
-      "domContentLoadedMs": 27,
-      "loadMs": 29,
-      "transferKB": 271,
+      "domContentLoadedMs": 28,
+      "loadMs": 31,
+      "transferKB": 272,
       "requests": 37,
-      "measuredLoadMs": 31
+      "measuredLoadMs": 32
     },
     {
       "route": "/notes/access-compared-with-ptai/",
       "domContentLoadedMs": 30,
-      "loadMs": 32,
-      "transferKB": 285,
+      "loadMs": 35,
+      "transferKB": 286,
       "requests": 36,
-      "measuredLoadMs": 35
+      "measuredLoadMs": 38
     },
     {
       "route": "/notes/primal-and-dual-walk-access/",
-      "domContentLoadedMs": 17,
+      "domContentLoadedMs": 29,
       "loadMs": 32,
-      "transferKB": 285,
+      "transferKB": 286,
       "requests": 36,
-      "measuredLoadMs": 34
+      "measuredLoadMs": 36
     },
     {
       "route": "/notes/walk-access-to-urban-rail/",
       "domContentLoadedMs": 30,
-      "loadMs": 33,
-      "transferKB": 285,
+      "loadMs": 32,
+      "transferKB": 286,
       "requests": 36,
-      "measuredLoadMs": 34
+      "measuredLoadMs": 33
     },
     {
       "route": "/notes/the-group-is-underway/",
-      "domContentLoadedMs": 27,
-      "loadMs": 29,
-      "transferKB": 268,
+      "domContentLoadedMs": 28,
+      "loadMs": 30,
+      "transferKB": 269,
       "requests": 35,
-      "measuredLoadMs": 31
+      "measuredLoadMs": 32
     },
     {
       "route": "/notes/highway-safety-collaboration/",
-      "domContentLoadedMs": 26,
+      "domContentLoadedMs": 27,
       "loadMs": 29,
-      "transferKB": 268,
+      "transferKB": 269,
       "requests": 35,
       "measuredLoadMs": 32
     },
     {
       "route": "/contact/",
-      "domContentLoadedMs": 30,
-      "loadMs": 33,
-      "transferKB": 296,
+      "domContentLoadedMs": 29,
+      "loadMs": 34,
+      "transferKB": 297,
       "requests": 36,
-      "measuredLoadMs": 35
+      "measuredLoadMs": 36
     },
     {
       "route": "/brand/",
-      "domContentLoadedMs": 19,
-      "loadMs": 31,
+      "domContentLoadedMs": 34,
+      "loadMs": 37,
       "transferKB": 297,
       "requests": 35,
-      "measuredLoadMs": 33
+      "measuredLoadMs": 38
     }
   ],
   "summary": {

@@ -1,6 +1,6 @@
-# ALIS - start here
+# TBRG - start here
 
-This archive contains the ALIS identity and the restyled website. Everything is finished and
+This archive contains the TBRG identity and the restyled website. Everything is finished and
 checked; the only thing left is publishing it to the lab's own domain, which needs your host
 access.
 
@@ -54,9 +54,9 @@ Already built? You can skip `npm run build` and upload `03-website/deploy-build/
 - **Enquiries are traceable.** Each submission is stored with a timestamp, the page it came from,
   every field, and a consent flag, and can be exported as CSV. `05-reports/inquiry-ledger-sample.json`
   shows one real captured record. The live ledger ships empty so you start clean.
-- **The acronym is a placeholder.** Nothing in the old site recorded what ALIS stands for, so it is
-  not invented here. Add the official long form to `01-identity/brand-guidelines.md` section 1 and
-  to the stacked logo when you confirm it.
+- **The name is the group's own.** The restyle had introduced a new acronym with no recorded
+  expansion; the naming has been reverted to **Travel Behavior Research Group**, short form **TBRG**,
+  which is what the group's previous site used. The monogram letter is now T.
 - **Not yet published.** This environment has no access to the lab's host, so the site is built and
   verified but not live. The pre-restyle site remains at `pongsun-b.github.io/TravBhv/`.
 - **Chrome was automated; Safari and Firefox were not.** Nothing depends on Chrome-only features,

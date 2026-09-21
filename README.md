@@ -1,6 +1,6 @@
-# ALIS — Transportation Behavior Lab
+# TBRG — Travel Behavior Research Group
 
-Public website of the Transportation Behavior Lab (ALIS), Department of Civil Engineering,
+Public website of the Travel Behavior Research Group (TBRG), Department of Civil Engineering,
 Faculty of Engineering, Chulalongkorn University.
 
 **Published site:** <https://pongsun-b.github.io/TravBhv/>
@@ -10,7 +10,7 @@ Faculty of Engineering, Chulalongkorn University.
 > is ever renamed, the URL and the subpath change with it — see
 > [Publishing](#publishing-to-github-pages).
 
-The published site is the ALIS site in **[`site/`](site/)** — a SvelteKit app that prerenders to
+The published site is the TBRG site in **[`site/`](site/)** — a SvelteKit app that prerenders to
 plain static files. It is deployed to GitHub Pages by
 **[`.github/workflows/pages.yml`](.github/workflows/pages.yml)**.
 
@@ -19,7 +19,7 @@ plain static files. It is deployed to GitHub Pages by
 ## Publishing to GitHub Pages
 
 Everything needed to publish is already in the repository, and the work is committed on `main`
-(commit `Publish the ALIS site`, still unpushed). All you have to do is push:
+(commit `Publish the TBRG site`, still unpushed). All you have to do is push:
 
 ```bash
 git checkout main

@@ -1,4 +1,4 @@
-# ALIS brand guidelines
+# TBRG brand guidelines
 
 The written half of the identity. The visual half is the `/brand/` page on the site, which renders
 the same tokens and also prints the measured contrast ratios.
@@ -9,14 +9,12 @@ the same tokens and also prints the measured contrast ratios.
 
 ---
 
-## 1. What ALIS is
+## 1. What TBRG is
 
-ALIS is the Transportation Behavior Lab, in the Department of Civil Engineering at Chulalongkorn
-University. The identity has to do one job: make a research group that studies movement look
-precise, current and calm, without looking loud.
-
-> The name expansion is not recorded here on purpose. Add the lab's official long form to this
-> section and to the descriptor in `brand/svg/alis-lockup-stacked.svg` when it is confirmed.
+TBRG is the Travel Behavior Research Group, in the Department of Civil Engineering at Chulalongkorn
+University. The name is the group's own, restored from its previous site; TBRG is the short form of
+Travel Behavior Research Group. The identity has to do one job: make a research group that studies
+movement look precise, current and calm, without looking loud.
 
 **Positioning in one line.** We study the decisions inside a journey, and we publish what can be reused.
 
@@ -34,14 +32,14 @@ Two marks, one system.
 
 | Element | File | Use |
 | --- | --- | --- |
-| Mark | `alis-mark.svg` | The node-on-ring symbol. Default, 24 px and above. |
-| Mark, small cut | `alis-mark-small.svg` | Heavier stroke and wider opening for 24 to 32 px. |
-| Mono mark | `alis-mark-mono.svg` | Single-colour reproduction, `currentColor`. |
-| Monogram | `alis-monogram.svg` | The letter A. Secondary mark. |
-| Monogram tile | `alis-tile.svg` | Two-colour tile for app icons and favicons. |
-| Wordmark | `alis-wordmark.svg` | Outlined ALIS lettering, no font required. |
-| Primary lockup | `alis-lockup-horizontal.svg` | Mark then wordmark. Default. |
-| Stacked lockup | `alis-lockup-stacked.svg` | Mark above wordmark above descriptor. |
+| Mark | `tbrg-mark.svg` | The node-on-ring symbol. Default, 24 px and above. |
+| Mark, small cut | `tbrg-mark-small.svg` | Heavier stroke and wider opening for 24 to 32 px. |
+| Mono mark | `tbrg-mark-mono.svg` | Single-colour reproduction, `currentColor`. |
+| Monogram | `tbrg-monogram.svg` | The letter T. Secondary mark. |
+| Monogram tile | `tbrg-tile.svg` | Two-colour tile for app icons and favicons. |
+| Wordmark | `tbrg-wordmark.svg` | Outlined TBRG lettering, no font required. |
+| Primary lockup | `tbrg-lockup-horizontal.svg` | Mark then wordmark. Default. |
+| Stacked lockup | `tbrg-lockup-stacked.svg` | Mark above wordmark above descriptor. |
 
 The mark is a **node on a ring**: a closed route with one stop, with the ring opened just enough
 that the node keeps clear air on both sides. That opening is the whole point. A closed ring with a

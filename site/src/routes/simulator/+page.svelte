@@ -34,7 +34,7 @@
 </script>
 
 <svelte:head>
-  <title>Mode-choice simulator · Transportation Behavior Lab</title>
+  <title>Mode-choice simulator · TBRG</title>
   <meta
     name="description"
     content="An interactive travel-behavior simulator: set trip distance, first-mile walk, weather and value of time, and see how trip share moves between rail, bus, motorcycle taxi, car and walking."

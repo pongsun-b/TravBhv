@@ -1,6 +1,6 @@
-# ALIS
+# TBRG
 
-Identity and website for **ALIS**, the Transportation Behavior Lab, Department of Civil
+Identity and website for **TBRG**, the Travel Behavior Research Group, Department of Civil
 Engineering, Chulalongkorn University.
 
 A restyle of the lab's existing public site: the content, people, publications, projects and

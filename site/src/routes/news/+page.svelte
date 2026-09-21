@@ -5,10 +5,10 @@
 </script>
 
 <svelte:head>
-  <title>News · Transportation Behavior Lab</title>
+  <title>News · TBRG</title>
   <meta
     name="description"
-    content="Group news and research notes from the Transportation Behavior Lab, including the walk-access map to urban rail and highway safety collaboration."
+    content="Group news and research notes from the Travel Behavior Research Group, including the walk-access map to urban rail and highway safety collaboration."
   />
 </svelte:head>
 

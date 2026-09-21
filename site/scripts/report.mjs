@@ -41,7 +41,7 @@ const linkRows = r.links
 
 const consoleBad = r.console.filter((c) => c.errors.length);
 
-const md = `# ALIS site - performance and accessibility report
+const md = `# TBRG site - performance and accessibility report
 
 Generated ${new Date(r.generatedAt).toISOString()} against \`${r.base}\`.
 Raw data: \`reports/verification.json\`. Re-run with \`node scripts/verify.mjs [baseUrl]\`.

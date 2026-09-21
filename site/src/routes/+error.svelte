@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>Page not found · Transportation Behavior Lab</title>
+  <title>Page not found · TBRG</title>
 </svelte:head>
 
 <section class="wrap err">
