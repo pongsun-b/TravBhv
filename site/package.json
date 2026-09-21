@@ -12,7 +12,8 @@
     "serve": "node server/inquiries.mjs",
     "brand": "node scripts/build-brand.mjs && node scripts/build-assets.mjs",
     "tokens": "node scripts/tokens-export.mjs",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json"
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "verify:repo": "node scripts/check-repo-hygiene.mjs"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.6",

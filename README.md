@@ -119,6 +119,13 @@ npm run preview    # serve the built site, http://localhost:4173
 npm run serve      # built site plus the enquiry endpoint, http://localhost:4180
 ```
 
+Two checks you can run at any time:
+
+- `npm run verify:repo` — fails if an AI agent/identity file is ever tracked, or if a file the site
+  needs has been left uncommitted. No dependencies, safe to run in CI.
+- `node scripts/verify.mjs` — the full suite: accessibility, links, responsive overflow and form
+  interaction across all 12 routes (needs `npm run serve` running, and Google Chrome).
+
 Node 20 or newer. See [`site/README.md`](site/README.md) for the verification scripts.
 
 ---

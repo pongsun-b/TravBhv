@@ -20,6 +20,7 @@ npm run serve      # built site plus the enquiry endpoint, http://localhost:4180
 npm run brand      # regenerate the identity asset pack
 npm run tokens     # regenerate design-tokens.json from tokens.css
 npm run check      # svelte-check
+npm run verify:repo  # fail if an agent/identity file is tracked or a required file is uncommitted
 ```
 
 Node 20 or newer. `npm run serve` is the only mode in which the enquiry form can store a
