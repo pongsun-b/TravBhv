@@ -25,8 +25,8 @@ rules. The visual version of the guidelines is the `/brand/` page on the site it
 
 ## 2. Project map
 
-```
-alis/
+```text
+site/
 ├── README.md                     run, change, deploy
 ├── HANDOFF.md                    this file
 ├── docs/brand-guidelines.md      identity rules in writing
@@ -97,6 +97,12 @@ endpoint needs a long-running Node process, so either:
 - if neither is possible, the form degrades to an explicit error state with a mailto link and
   **does not silently lose the message**.
 
+> **Warning: do not expose `npm run serve` to the internet yet.** `GET /api/inquiries` and
+> `GET /api/inquiries.csv` have no authentication, so anyone who can reach the server can download
+> every stored enquiry: names, email addresses and messages. Until those endpoints require a
+> credential, keep the process on a private network or block `/api/inquiries*` for `GET` requests
+> at the reverse proxy.
+
 **Rollback.** Before publishing, take a copy of what is currently live:
 
 ```bash
@@ -106,9 +112,13 @@ cp -R /path/to/live/site /path/to/backups/site-$(date +%Y%m%d)
 To roll back, restore that directory. For the enquiry ledger, back up `data/inquiries.jsonl` as
 well; submissions received after launch only exist in that file.
 
-The pre-restyle site is also preserved at `https://pongsun-b.github.io/TravBhv/` and its content is
-mirrored in this repository's `src/lib/data/`, so the previous content is never more than a redeploy
-away.
+On GitHub Pages there is no directory to copy: roll back by reverting the commit on `main`
+(`git revert <sha>`, then push), and `.github/workflows/pages.yml` redeploys the previous state.
+
+The pre-restyle Jekyll site is no longer served; `https://pongsun-b.github.io/TravBhv/` now serves
+this site. Its source is still in the repository root, and `.github/workflows/jekyll.yml` can
+rebuild it by hand, so the previous site is never more than a redeploy away. Its content was
+carried over into `src/lib/data/`.
 
 ## 6. Enquiry ledger
 

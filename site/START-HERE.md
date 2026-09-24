@@ -1,8 +1,12 @@
 # TBRG - start here
 
 This archive contains the TBRG identity and the restyled website. Everything is finished and
-checked; the only thing left is publishing it to the lab's own domain, which needs your host
-access.
+checked, and the site is live on GitHub Pages at <https://pongsun-b.github.io/TravBhv/>. Moving it
+to the lab's own domain needs your host access.
+
+(This file is the front page of the deliverables archive built by
+`scripts/package-deliverables.py`. The numbered folders below exist inside that archive, not in the
+repository.)
 
 Open this file first, then follow the order below. You do not need to be a developer to review
 sections 01, 02, 04 and 05.
@@ -57,7 +61,8 @@ Already built? You can skip `npm run build` and upload `03-website/deploy-build/
 - **The name is the group's own.** The restyle had introduced a new acronym with no recorded
   expansion; the naming has been reverted to **Travel Behavior Research Group**, short form **TBRG**,
   which is what the group's previous site used. The monogram letter is now T.
-- **Not yet published.** This environment has no access to the lab's host, so the site is built and
-  verified but not live. The pre-restyle site remains at `pongsun-b.github.io/TravBhv/`.
+- **Published on GitHub Pages.** The site is live at `pongsun-b.github.io/TravBhv/`, built and
+  deployed by `.github/workflows/pages.yml` on every push to `main`. It replaced the pre-restyle
+  Jekyll site at that address; the Jekyll source is still in the repository root.
 - **Chrome was automated; Safari and Firefox were not.** Nothing depends on Chrome-only features,
   but a quick manual pass on those two is worth doing.

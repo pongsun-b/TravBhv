@@ -1,6 +1,6 @@
 name: Deploy Jekyll site to Pages (legacy - manual only)
 
-# LEGACY. The published site is now the ALIS site in site/, deployed by .github/workflows/pages.yml.
+# LEGACY. The published site is now the TBRG site in site/, deployed by .github/workflows/pages.yml.
 # This workflow is kept for reference and for anyone who still wants to build the old Jekyll pages,
 # but its push trigger was removed so that two workflows can no longer race for the same Pages
 # environment. Run it from the Actions tab with "Run workflow" if you ever need it.

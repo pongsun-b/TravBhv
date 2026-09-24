@@ -18,23 +18,13 @@ plain static files. It is deployed to GitHub Pages by
 
 ## Publishing to GitHub Pages
 
-Everything needed to publish is already in the repository, and the work is committed on `main`
-(commit `Publish the TBRG site`, still unpushed). All you have to do is push:
+The site is live. Every push to `main` rebuilds and redeploys it, so publishing a change means
+merging it into `main`. Work in progress lives on `develop`, which does not deploy.
 
-```bash
-git checkout main
-git push origin main
-```
+The `origin` remote is `https://github.com/pongsun-b/TravBhv.git`.
 
-The `origin` remote is `https://github.com/pongsun-b/TravBhv.git` and the branch is `main`.
-
-If you edit anything first, commit it too:
-
-```bash
-git add -A && git commit -m "Describe your change" && git push origin main
-```
-
-Then, once per repository (not once per push):
+Pages was configured once per repository, as follows. It only needs repeating if the repository is
+recreated or the Pages source is changed:
 
 1. Open the repository on GitHub → **Settings** → **Pages**.
 2. Under **Build and deployment → Source**, choose **GitHub Actions**.
@@ -46,7 +36,7 @@ Then, once per repository (not once per push):
 
 When the run turns green, the site is at:
 
-```
+```text
 https://pongsun-b.github.io/TravBhv/
 ```
 
