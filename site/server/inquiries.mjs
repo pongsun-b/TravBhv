@@ -1,5 +1,5 @@
 /**
- * ALIS site server: serves the static build and records enquiries.
+ * TBRG site server: serves the static build and records enquiries.
  *
  *   node server/inquiries.mjs            # http://localhost:4180
  *   PORT=8080 node server/inquiries.mjs
@@ -117,7 +117,7 @@ async function handleApi(req, res, url) {
     const rows = await readLedger();
     return send(res, 200, toCsv(rows), {
       'content-type': 'text/csv; charset=utf-8',
-      'content-disposition': 'attachment; filename="alis-inquiries.csv"'
+      'content-disposition': 'attachment; filename="tbrg-inquiries.csv"'
     });
   }
 
@@ -231,6 +231,6 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`ALIS site on http://localhost:${PORT}`);
+  console.log(`TBRG site on http://localhost:${PORT}`);
   console.log(`Ledger: ${LEDGER}`);
 });
