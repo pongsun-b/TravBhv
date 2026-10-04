@@ -129,7 +129,6 @@ const ALLOWED_IGNORED = new RegExp(
     // If a build is interrupted it can be left behind, so it is allowed rather than alarming.
     '^site/vite\\.config\\.[jt]s\\.timestamp-',
     '\\.timestamp-[0-9]+-',
-    '^web/(build|node_modules|\\.svelte-kit)/',
     '^_site/',
     '^\\.jekyll-cache/',
     '^\\.jekyll-metadata$',

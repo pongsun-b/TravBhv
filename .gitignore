@@ -11,11 +11,6 @@ __pycache__/
 .DS_Store
 .env
 
-# SvelteKit rewrite (web/)
-web/node_modules/
-web/build/
-web/.svelte-kit/
-
 # The published site (site/) builds its own output; never commit it.
 site/node_modules/
 site/build/

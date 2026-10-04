@@ -35,7 +35,6 @@ include:
   - _pages
 
 exclude:
-  - web
   # The published site (SvelteKit, built by .github/workflows/pages.yml). Not Jekyll input.
   - site
 
