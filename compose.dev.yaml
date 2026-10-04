@@ -1,0 +1,40 @@
+name: travbhv-dev
+
+services:
+  web:
+    build:
+      context: ./site
+      dockerfile: Dockerfile.dev
+    init: true
+    ports:
+      - "127.0.0.1:${TRAVBHV_PORT:-5173}:5173"
+    environment:
+      VITE_ENQUIRY_MODE: mailto
+    develop:
+      watch:
+        - action: sync
+          path: ./site
+          target: /app
+          initial_sync: true
+          ignore:
+            - node_modules/
+            - .svelte-kit/
+            - build/
+            - data/
+            - coverage/
+            - reports/
+            - "*.log"
+            - ".env*"
+            - .npmrc
+            - package.json
+            - package-lock.json
+            - Dockerfile.dev
+            - .dockerignore
+        - action: rebuild
+          path: ./site/package.json
+        - action: rebuild
+          path: ./site/package-lock.json
+        - action: rebuild
+          path: ./site/Dockerfile.dev
+        - action: rebuild
+          path: ./site/.dockerignore

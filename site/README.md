@@ -26,6 +26,9 @@ npm run verify:repo  # fail if an agent/identity file is tracked or a required f
 Node 20 or newer. `npm run serve` is the only mode in which the enquiry form can store a
 submission; see `HANDOFF.md` section 6.
 
+For containerized development with Node 24 and automatic reload, see
+[Local development with Docker](docs/docker-local-dev.md).
+
 ## Deploy
 
 This repository publishes the site with **GitHub Actions** to a GitHub Pages *project* page at

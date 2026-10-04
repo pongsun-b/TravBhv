@@ -102,6 +102,9 @@ Full instructions, including how to run and verify locally, are in
 
 ## Running it locally
 
+For containerized development with Node 24 and automatic reload, see
+[Local development with Docker](site/docs/docker-local-dev.md).
+
 ```bash
 cd site
 npm install

@@ -1,0 +1,15 @@
+FROM node:24-bookworm
+
+WORKDIR /app
+RUN chown node:node /app
+
+USER node
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+
+# The prepare lifecycle runs SvelteKit sync, so copy its configuration and source first.
+COPY --chown=node:node . .
+RUN npm ci
+
+EXPOSE 5173
+
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173", "--strictPort"]
